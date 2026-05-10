@@ -4,12 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>eLiving Space — Premium Apartment in Valencia, Spain</title>
-  <meta name="description" content="Luxury 3-bedroom apartment in Valencia city centre. Sleeps 5. Private terrace, full kitchen, 2 bathrooms. Book direct from €260/night." />
+  <meta name="description" content="Luxury 3-bedroom apartment in Valencia city centre. Sleeps 5. Private terrace, full kitchen, 2 bathrooms. Book direct from €260/night — save 20% vs Airbnb." />
   <meta property="og:title" content="eLiving Space — Premium Apartment Valencia" />
-  <meta property="og:description" content="Scandinavian-designed 3-bed apartment steps from Bioparc Valencia. Book direct from €260/night." />
+  <meta property="og:description" content="Scandinavian-designed 3-bed apartment steps from Bioparc Valencia. Book direct from €260/night and save 20%." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://eliving.space" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"LodgingBusiness","name":"eLiving Space","description":"Luxury 3-bedroom apartment in Valencia city centre, sleeps up to 5 guests","url":"https://eliving.space","telephone":"+34614272955","email":"jkholdings55@gmail.com","address":{"@type":"PostalAddress","streetAddress":"Calle Archena 14","addressLocality":"Valencia","addressCountry":"ES"},"priceRange":"€260/night"}</script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RXV894QBN0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RXV894QBN0');
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -18,618 +27,774 @@
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{
-      --w:#FFFFFF;--warm:#F9F7F4;--warm2:#EDEAE4;--char:#1A1A1A;--mid:#555550;--light:#9A9A94;
-      --gold:#C9A96E;--goldl:#E8D5B0;--serif:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans',sans-serif;
-      --r:12px;--sh:0 4px 32px rgba(26,26,26,.08);--shl:0 12px 60px rgba(26,26,26,.14)
+      --white:#FFFFFF;--warm:#F9F7F4;--warm2:#EDEAE4;
+      --charcoal:#1A1A1A;--mid:#555550;--light:#9A9A94;
+      --gold:#C9A96E;--gold-light:#E8D5B0;
+      --serif:'Cormorant Garamond',Georgia,serif;
+      --sans:'DM Sans',sans-serif;
+      --shadow:0 4px 32px rgba(26,26,26,.08);
+      --shadow-lg:0 12px 60px rgba(26,26,26,.14);
     }
     html{scroll-behavior:smooth}
-    body{font-family:var(--sans);background:var(--w);color:var(--char);overflow-x:hidden}
+    body{font-family:var(--sans);background:var(--white);color:var(--charcoal);overflow-x:hidden}
 
-    /* NAV */
+    /* ── GDPR COOKIE BANNER ── */
+    .cookie-bar{
+      position:fixed;bottom:0;left:0;right:0;z-index:9999;
+      background:rgba(26,26,26,.97);backdrop-filter:blur(12px);
+      border-top:1px solid rgba(255,255,255,.07);
+      padding:18px 32px;
+      display:flex;align-items:center;gap:20px;flex-wrap:wrap;
+      transform:translateY(0);transition:transform .4s ease;
+    }
+    .cookie-bar.hidden{transform:translateY(110%)}
+    .cookie-txt{flex:1;min-width:260px;font-size:.8rem;color:rgba(255,255,255,.65);line-height:1.65}
+    .cookie-txt a{color:var(--gold);text-decoration:underline}
+    .cookie-btns{display:flex;gap:10px;flex-shrink:0;flex-wrap:wrap}
+    .ck-accept{background:var(--gold);color:#fff;border:none;border-radius:50px;padding:10px 22px;font-family:var(--sans);font-size:.8rem;font-weight:500;cursor:pointer;transition:background .3s}
+    .ck-accept:hover{background:#b8904d}
+    .ck-decline{background:transparent;color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.18);border-radius:50px;padding:10px 18px;font-family:var(--sans);font-size:.8rem;cursor:pointer;transition:all .3s}
+    .ck-decline:hover{color:#fff;border-color:rgba(255,255,255,.4)}
+
+    /* ── NAV ── */
     nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 48px;display:flex;align-items:center;justify-content:space-between;transition:all .4s}
-    nav.sc{background:rgba(255,255,255,.95);backdrop-filter:blur(16px);box-shadow:0 2px 24px rgba(0,0,0,.06);padding:14px 48px}
-    .nl{font-family:var(--serif);font-size:1.5rem;font-weight:600;color:#fff;text-decoration:none;letter-spacing:.02em;transition:color .4s}
-    nav.sc .nl{color:var(--char)}
-    .nlinks{display:flex;gap:28px;align-items:center}
-    .nlinks a{font-size:.78rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.82);text-decoration:none;transition:color .3s}
-    nav.sc .nlinks a{color:var(--mid)}
-    .nlinks a:hover{color:var(--gold)!important}
-    .ncta{background:var(--gold)!important;color:#fff!important;padding:10px 22px;border-radius:50px;font-size:.76rem!important}
-    .ncta:hover{background:#b8904d!important;transform:translateY(-1px)}
-    .hbg{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none}
+    nav.sc{background:rgba(255,255,255,.96);backdrop-filter:blur(16px);box-shadow:0 2px 24px rgba(0,0,0,.06);padding:14px 48px}
+    .n-logo{font-family:var(--serif);font-size:1.5rem;font-weight:600;color:#fff;text-decoration:none;letter-spacing:.02em;transition:color .4s}
+    nav.sc .n-logo{color:var(--charcoal)}
+    .n-links{display:flex;gap:26px;align-items:center}
+    .n-links a{font-size:.77rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.8);text-decoration:none;transition:color .3s}
+    nav.sc .n-links a{color:var(--mid)}
+    .n-links a:hover{color:var(--gold)!important}
+    .n-cta{background:var(--gold)!important;color:#fff!important;padding:10px 22px;border-radius:50px;font-size:.75rem!important;transition:background .3s,transform .2s!important}
+    .n-cta:hover{background:#b8904d!important;transform:translateY(-1px)}
+    .hbg{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:0}
     .hbg span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:background .4s}
-    nav.sc .hbg span{background:var(--char)}
+    nav.sc .hbg span{background:var(--charcoal)}
 
-    /* MOBILE MENU */
-    .mm{display:none;position:fixed;inset:0;background:var(--char);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:28px}
-    .mm.open{display:flex}
-    .mm a{font-family:var(--serif);font-size:2.2rem;font-weight:300;color:#fff;text-decoration:none}
-    .mm a:hover{color:var(--gold)}
-    .mmx{position:absolute;top:24px;right:28px;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer}
+    /* ── MOBILE MENU ── */
+    .mob{display:none;position:fixed;inset:0;background:var(--charcoal);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:28px}
+    .mob.open{display:flex}
+    .mob a{font-family:var(--serif);font-size:2.2rem;font-weight:300;color:#fff;text-decoration:none;transition:color .3s}
+    .mob a:hover{color:var(--gold)}
+    .mob-x{position:absolute;top:24px;right:28px;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer}
 
-    /* HERO */
+    /* ── HERO ── */
     .hero{position:relative;height:100vh;min-height:640px;display:flex;align-items:center;justify-content:center;overflow:hidden}
-    .hbg-el{position:absolute;inset:0;background:#141b22}
-    .hslides{position:absolute;inset:0}
-    .hslide{position:absolute;inset:0;opacity:0;transition:opacity 1.4s ease}
-    .hslide.active{opacity:1}
-    .hslide img{width:100%;height:100%;object-fit:cover}
-    .hov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.3) 0%,rgba(0,0,0,.5) 60%,rgba(0,0,0,.72) 100%)}
-    .hcont{position:relative;z-index:2;text-align:center;padding:0 24px;animation:fadeUp 1s ease both .3s}
-    .heye{font-size:.7rem;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
-    .htitle{font-family:var(--serif);font-size:clamp(3.2rem,7vw,6.5rem);font-weight:300;color:#fff;line-height:1.04;margin-bottom:22px}
-    .htitle em{font-style:italic;color:var(--goldl)}
-    .hsub{font-size:1.05rem;font-weight:300;color:rgba(255,255,255,.65);max-width:500px;margin:0 auto 48px;line-height:1.75}
-    .ctar{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:16px 36px;border-radius:50px;font-family:var(--sans);font-size:.875rem;font-weight:500;letter-spacing:.04em;text-decoration:none;border:none;cursor:pointer;transition:all .3s}
-    .btng{background:var(--gold);color:#fff;box-shadow:0 4px 20px rgba(201,169,110,.35)}
-    .btng:hover{background:#b8904d;transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,169,110,.45)}
-    .btno{background:transparent;color:rgba(255,255,255,.82);border:1px solid rgba(255,255,255,.28)}
-    .btno:hover{border-color:var(--gold);color:var(--gold)}
-    .btndk{background:var(--char);color:#fff}
-    .btndk:hover{background:#333;transform:translateY(-1px)}
-    .sdots{position:absolute;bottom:78px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:3}
-    .sdot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:all .3s;border:none}
-    .sdot.active{background:var(--gold);transform:scale(1.4)}
-    .hscroll{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.35);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px;animation:bounce 2.4s ease-in-out infinite}
-    .hscroll::after{content:'';display:block;width:1px;height:36px;background:linear-gradient(to bottom,rgba(255,255,255,.35),transparent)}
+    .h-bg{position:absolute;inset:0;background:#141b22}
+    .h-slides{position:absolute;inset:0}
+    .h-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.4s ease}
+    .h-slide.on{opacity:1}
+    .h-slide img{width:100%;height:100%;object-fit:cover}
+    .h-ov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.3) 0%,rgba(0,0,0,.48) 55%,rgba(0,0,0,.72) 100%)}
+    .h-cnt{position:relative;z-index:2;text-align:center;padding:0 24px;animation:fadeUp .9s ease both .3s}
+    .h-eye{font-size:.7rem;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+    .h-title{font-family:var(--serif);font-size:clamp(3rem,7vw,6.2rem);font-weight:300;color:#fff;line-height:1.04;margin-bottom:22px}
+    .h-title em{font-style:italic;color:var(--gold-light)}
+    .h-sub{font-size:1rem;font-weight:300;color:rgba(255,255,255,.62);max-width:490px;margin:0 auto 46px;line-height:1.78}
+    .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:15px 34px;border-radius:50px;font-family:var(--sans);font-size:.875rem;font-weight:500;letter-spacing:.04em;text-decoration:none;border:none;cursor:pointer;transition:all .3s}
+    .btn-g{background:var(--gold);color:#fff;box-shadow:0 4px 20px rgba(201,169,110,.35)}
+    .btn-g:hover{background:#b8904d;transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,169,110,.45)}
+    .btn-o{background:transparent;color:rgba(255,255,255,.82);border:1px solid rgba(255,255,255,.28)}
+    .btn-o:hover{border-color:var(--gold);color:var(--gold)}
+    .btn-d{background:var(--charcoal);color:#fff}
+    .btn-d:hover{background:#333;transform:translateY(-1px)}
+    .h-scroll{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.36);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px;animation:bounce 2.4s ease-in-out infinite}
+    .h-scroll::after{content:'';display:block;width:1px;height:34px;background:linear-gradient(to bottom,rgba(255,255,255,.36),transparent)}
+    .s-dots{position:absolute;bottom:78px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:3}
+    .s-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:all .3s;border:none}
+    .s-dot.on{background:var(--gold);transform:scale(1.4)}
 
-    /* STATS */
-    .stats{background:var(--char);padding:36px 48px}
-    .si{max-width:1140px;margin:0 auto;display:flex;justify-content:space-around;flex-wrap:wrap}
+    /* ── STATS ── */
+    .stats{background:var(--charcoal);padding:34px 48px}
+    .stats-in{max-width:1140px;margin:0 auto;display:flex;justify-content:space-around;flex-wrap:wrap}
     .stat{text-align:center;padding:16px 28px;position:relative}
     .stat:not(:last-child)::after{content:'';position:absolute;right:0;top:20%;bottom:20%;width:1px;background:rgba(255,255,255,.08)}
-    .stn{font-family:var(--serif);font-size:2.6rem;font-weight:300;color:var(--gold);line-height:1}
-    .stl{font-size:.72rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-top:7px}
+    .stat-n{font-family:var(--serif);font-size:2.5rem;font-weight:300;color:var(--gold);line-height:1}
+    .stat-l{font-size:.7rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.42);margin-top:7px}
 
-    /* SECTIONS */
+    /* ── SECTIONS ── */
     section{padding:96px 48px}
-    .con{max-width:1140px;margin:0 auto}
-    .lbl{font-size:.7rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
-    .h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3.4rem);font-weight:300;line-height:1.12;color:var(--char);margin-bottom:18px}
+    .container{max-width:1140px;margin:0 auto}
+    .lbl{font-size:.68rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+    .h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3.4rem);font-weight:300;line-height:1.12;color:var(--charcoal);margin-bottom:18px}
     .h2 em{font-style:italic}
-    .h2w{color:#fff}
-    .bt{font-size:.97rem;line-height:1.82;color:var(--mid)}
+    .h2-w{color:#fff}
+    .body-t{font-size:.97rem;line-height:1.82;color:var(--mid)}
 
-    /* GALLERY */
-    .gsec{background:var(--warm)}
-    .ghdr{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;margin-bottom:48px}
-    .pgrid{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:58px;gap:10px}
-    .pi2{overflow:hidden;border-radius:10px;background:var(--warm2);cursor:pointer}
-    .pi2 img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .55s cubic-bezier(.25,.46,.45,.94)}
-    .pi2:hover img{transform:scale(1.04)}
-    .g1{grid-column:1/8;grid-row:1/7}
-    .g2{grid-column:8/13;grid-row:1/4}
-    .g3{grid-column:8/11;grid-row:4/7}
-    .g4{grid-column:11/13;grid-row:4/7}
-    .g5{grid-column:1/5;grid-row:7/11}
-    .g6{grid-column:5/9;grid-row:7/11}
-    .g7{grid-column:9/13;grid-row:7/12}
-    .g8{grid-column:1/5;grid-row:11/14}
-    .g9{grid-column:5/9;grid-row:11/14}
-    .g10{grid-column:9/11;grid-row:12/15}
-    .g11{grid-column:11/13;grid-row:12/15}
+    /* ── GALLERY ── */
+    .gal-sec{background:var(--warm)}
+    .gal-hd{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;margin-bottom:48px}
+    .photo-grid{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:58px;gap:10px}
+    .pi{overflow:hidden;border-radius:10px;background:var(--warm2);cursor:pointer;position:relative}
+    .pi img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .55s cubic-bezier(.25,.46,.45,.94)}
+    .pi:hover img{transform:scale(1.05)}
+    .pi::after{content:'⤢';position:absolute;bottom:8px;right:10px;color:rgba(255,255,255,0);font-size:.9rem;transition:color .3s}
+    .pi:hover::after{color:rgba(255,255,255,.7)}
+    .p1{grid-column:1/8;grid-row:1/7}
+    .p2{grid-column:8/13;grid-row:1/4}
+    .p3{grid-column:8/11;grid-row:4/7}
+    .p4{grid-column:11/13;grid-row:4/7}
+    .p5{grid-column:1/5;grid-row:7/11}
+    .p6{grid-column:5/9;grid-row:7/11}
+    .p7{grid-column:9/13;grid-row:7/12}
+    .p8{grid-column:1/5;grid-row:11/14}
+    .p9{grid-column:5/9;grid-row:11/14}
+    .p10{grid-column:9/11;grid-row:12/15}
+    .p11{grid-column:11/13;grid-row:12/15}
 
-    /* LIGHTBOX */
+    /* ── LIGHTBOX ── */
     .lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.96);z-index:500;align-items:center;justify-content:center}
     .lb.open{display:flex}
     .lb img{max-width:92vw;max-height:90vh;object-fit:contain;border-radius:8px}
-    .lbx{position:absolute;top:20px;right:24px;font-size:2rem;color:#fff;background:none;border:none;cursor:pointer;opacity:.7}
-    .lbx:hover{opacity:1}
-    .lbp,.lbn{position:absolute;top:50%;transform:translateY(-50%);font-size:2.2rem;color:#fff;background:rgba(255,255,255,.1);border:none;cursor:pointer;padding:12px 18px;border-radius:8px;transition:background .2s}
-    .lbp{left:20px}.lbn{right:20px}
-    .lbp:hover,.lbn:hover{background:rgba(255,255,255,.2)}
+    .lb-x{position:absolute;top:18px;right:22px;font-size:2rem;color:#fff;background:none;border:none;cursor:pointer;opacity:.65;line-height:1}
+    .lb-x:hover{opacity:1}
+    .lb-p,.lb-n{position:absolute;top:50%;transform:translateY(-50%);font-size:2.2rem;color:#fff;background:rgba(255,255,255,.1);border:none;cursor:pointer;padding:12px 18px;border-radius:8px;transition:background .2s;line-height:1}
+    .lb-p{left:16px}.lb-n{right:16px}
+    .lb-p:hover,.lb-n:hover{background:rgba(255,255,255,.2)}
+    .lb-count{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.5);font-size:.75rem;letter-spacing:.1em}
 
-    /* FEATURES */
-    .fsec{background:var(--w)}
-    .flay{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
-    .fimgs{position:relative}
-    .fimgm{border-radius:16px;overflow:hidden;aspect-ratio:3/4;box-shadow:var(--shl)}
-    .fimgm img{width:100%;height:100%;object-fit:cover}
-    .fimgf{position:absolute;bottom:-28px;left:-28px;width:52%;border-radius:12px;overflow:hidden;box-shadow:var(--shl);border:4px solid var(--w)}
-    .fimgf img{width:100%;height:190px;object-fit:cover}
-    .flist{margin-top:36px;display:flex;flex-direction:column;gap:24px}
-    .fitem{display:flex;gap:18px;align-items:flex-start}
-    .ficon{width:46px;height:46px;border-radius:10px;background:var(--warm);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
-    .ftxt h4{font-family:var(--serif);font-size:1.1rem;font-weight:600;margin-bottom:3px}
-    .ftxt p{font-size:.85rem;color:var(--mid);line-height:1.65}
+    /* ── FEATURES ── */
+    .feat-sec{background:var(--white)}
+    .feat-lay{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+    .feat-img-wrap{position:relative}
+    .feat-main{border-radius:16px;overflow:hidden;aspect-ratio:3/4;box-shadow:var(--shadow-lg)}
+    .feat-main img{width:100%;height:100%;object-fit:cover}
+    .feat-float{position:absolute;bottom:-28px;left:-28px;width:52%;border-radius:12px;overflow:hidden;box-shadow:var(--shadow-lg);border:4px solid var(--white)}
+    .feat-float img{width:100%;height:190px;object-fit:cover}
+    .feat-list{margin-top:34px;display:flex;flex-direction:column;gap:22px}
+    .fi{display:flex;gap:16px;align-items:flex-start}
+    .fi-icon{width:46px;height:46px;border-radius:10px;background:var(--warm);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+    .fi-text h4{font-family:var(--serif);font-size:1.1rem;font-weight:600;margin-bottom:3px}
+    .fi-text p{font-size:.85rem;color:var(--mid);line-height:1.65}
 
-    /* REVIEWS */
-    .rsec{background:var(--warm)}
-    .rhdr{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;margin-bottom:48px}
-    .bbadge{display:flex;align-items:center;gap:16px;background:var(--w);border-radius:14px;padding:18px 24px;box-shadow:var(--sh);border:1px solid var(--warm2)}
-    .blogo{font-size:1.1rem;font-weight:700;color:#003580;letter-spacing:-.02em}
-    .blogo span{color:#0071c2}
-    .bscore{font-family:var(--serif);font-size:2.4rem;font-weight:600;color:#003580;line-height:1}
-    .blabel{font-size:.75rem;font-weight:700;color:#003580}
-    .bcount{font-size:.68rem;color:var(--light)}
-    .bstars{color:#FFB700;font-size:.9rem;margin-top:2px}
-    .rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .rcard{background:var(--w);border-radius:14px;padding:28px;box-shadow:var(--sh);border:1px solid transparent;transition:border-color .3s,transform .3s}
-    .rcard:hover{border-color:var(--goldl);transform:translateY(-3px)}
-    .rtop{display:flex;align-items:center;gap:12px;margin-bottom:16px}
-    .rav{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--goldl),var(--gold));display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.1rem;font-weight:600;color:#fff;flex-shrink:0}
-    .rname{font-weight:500;font-size:.9rem}
-    .rorigin{font-size:.75rem;color:var(--light)}
-    .rstars{color:#FFB700;font-size:.85rem;margin-bottom:12px}
-    .rtext{font-size:.875rem;color:var(--mid);line-height:1.72;font-style:italic}
-    .rplat{margin-top:14px;font-size:.7rem;color:var(--light);font-style:normal}
-    .rhl{background:linear-gradient(135deg,var(--char),#1E2B3A);color:#fff}
-    .rhl .rtext{color:rgba(255,255,255,.75)}
-    .rhl .rname{color:#fff}
-    .rhl .rorigin{color:rgba(255,255,255,.5)}
-    .rhl .rplat{color:rgba(255,255,255,.35)}
-    .oscore{display:flex;align-items:center;gap:0;margin-top:40px;background:var(--w);border-radius:14px;box-shadow:var(--sh);overflow:hidden}
-    .oscl{padding:32px 36px;border-right:1px solid var(--warm2);text-align:center}
-    .oscn{font-family:var(--serif);font-size:4rem;font-weight:300;color:var(--gold);line-height:1}
-    .oscll{font-size:1rem;font-weight:500;color:var(--char)}
-    .oscs{font-size:.8rem;color:var(--light)}
-    .oscr{flex:1;padding:24px 32px;display:flex;flex-direction:column;gap:10px}
-    .sbrw{display:flex;align-items:center;gap:10px}
-    .sbrl{font-size:.72rem;color:var(--mid);width:88px}
-    .sbrt{flex:1;height:5px;background:var(--warm2);border-radius:3px;overflow:hidden}
-    .sbrf{height:100%;border-radius:3px;background:var(--gold)}
+    /* ── REVIEWS ── */
+    .rev-sec{background:var(--warm)}
+    .rev-hd{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;margin-bottom:44px}
+    .bcom-badge{display:flex;align-items:center;gap:16px;background:var(--white);border-radius:14px;padding:18px 22px;box-shadow:var(--shadow);border:1px solid var(--warm2)}
+    .badge-logo{font-size:1.05rem;font-weight:700;color:#003580;letter-spacing:-.02em}
+    .badge-logo span{color:#0071c2}
+    .badge-stars{color:#FFB700;font-size:.9rem;margin-top:3px}
+    .badge-score{font-family:var(--serif);font-size:2.4rem;font-weight:600;color:#003580;line-height:1}
+    .badge-lbl{font-size:.75rem;font-weight:700;color:#003580}
+    .badge-ct{font-size:.68rem;color:var(--light)}
+    .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .rc{background:var(--white);border-radius:14px;padding:26px;box-shadow:var(--shadow);border:1px solid transparent;transition:border-color .3s,transform .3s}
+    .rc:hover{border-color:var(--gold-light);transform:translateY(-3px)}
+    .rc-top{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+    .rc-av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--gold-light),var(--gold));display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.1rem;font-weight:600;color:#fff;flex-shrink:0}
+    .rc-name{font-weight:500;font-size:.88rem}
+    .rc-origin{font-size:.72rem;color:var(--light)}
+    .rc-stars{color:#FFB700;font-size:.82rem;margin-bottom:10px}
+    .rc-txt{font-size:.85rem;color:var(--mid);line-height:1.74;font-style:italic}
+    .rc-pl{margin-top:12px;font-size:.68rem;color:var(--light);font-style:normal}
+    .rc-hl{background:linear-gradient(135deg,var(--charcoal),#1e2b3a);color:#fff}
+    .rc-hl .rc-txt{color:rgba(255,255,255,.72)}
+    .rc-hl .rc-name{color:#fff}
+    .rc-hl .rc-origin,.rc-hl .rc-pl{color:rgba(255,255,255,.4)}
+    .score-wrap{display:flex;align-items:center;gap:0;margin-top:32px;padding:28px;background:var(--white);border-radius:14px;box-shadow:var(--shadow);flex-wrap:wrap}
+    .score-big{text-align:center;padding-right:28px;border-right:1px solid var(--warm2)}
+    .score-num{font-family:var(--serif);font-size:3.8rem;font-weight:300;color:var(--gold);line-height:1}
+    .score-lbl{font-size:.95rem;font-weight:500}
+    .score-sub{font-size:.75rem;color:var(--light)}
+    .score-bars{flex:1;min-width:240px;padding-left:28px;display:flex;flex-direction:column;gap:9px}
+    .sb-row{display:flex;align-items:center;gap:10px}
+    .sb-lbl{font-size:.7rem;color:var(--mid);width:80px}
+    .sb-track{flex:1;height:5px;background:var(--warm2);border-radius:3px;overflow:hidden}
+    .sb-fill{height:100%;border-radius:3px;background:var(--gold)}
+    .sb-val{font-size:.75rem;color:var(--mid);width:24px;text-align:right}
 
-    /* PRICING */
-    .psec{background:var(--w)}
-    .play{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
-    .pcard{background:var(--warm);border-radius:20px;padding:48px}
-    .pamt{font-family:var(--serif);font-size:4.2rem;font-weight:300;color:var(--char);line-height:1}
-    .pamt sup{font-size:1.6rem;vertical-align:super}
-    .pamt sub{font-size:1.1rem;color:var(--mid)}
-    .pnote{font-size:.78rem;color:var(--light);margin-top:8px}
-    .pdiv{height:1px;background:var(--warm2);margin:28px 0}
-    .pinc{display:flex;flex-direction:column;gap:11px}
-    .pi3{display:flex;align-items:center;gap:10px;font-size:.875rem;color:var(--mid)}
-    .pi3::before{content:'✓';color:var(--gold);font-weight:700}
-    .csec{background:var(--w);border-radius:20px;padding:32px;box-shadow:var(--sh)}
-    .cnav{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
-    .ctitle{font-family:var(--serif);font-size:1.25rem}
-    .cbtn{background:none;border:1px solid var(--warm2);border-radius:7px;width:33px;height:33px;cursor:pointer;color:var(--mid);font-size:1.1rem;transition:all .2s}
-    .cbtn:hover{border-color:var(--gold)}
-    .cgrid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}
-    .cdh{text-align:center;font-size:.65rem;text-transform:uppercase;letter-spacing:.08em;color:var(--light);padding:7px 0}
-    .cd{aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:7px;cursor:pointer;transition:background .15s}
-    .cd:hover:not(.empty):not(.past){background:var(--warm)}
-    .cd.today{background:var(--goldl)}
-    .cd.booked{background:var(--warm2);cursor:not-allowed;opacity:.5}
-    .cd .dn{font-size:.82rem}
-    .cd.past .dn{color:var(--light);cursor:default}
-    .cd .dp{font-size:.58rem;color:var(--gold);margin-top:1px}
+    /* ── 20% DISCOUNT BANNER ── */
+    .discount-banner{
+      background:linear-gradient(135deg,#1e2b1e 0%,#2d4a2d 50%,#1a3a1a 100%);
+      border:1px solid rgba(201,169,110,.25);
+      border-radius:16px;
+      padding:28px 36px;
+      display:flex;
+      align-items:center;
+      gap:24px;
+      margin-bottom:32px;
+      position:relative;
+      overflow:hidden;
+    }
+    .discount-banner::before{
+      content:'';position:absolute;top:-40px;right:-40px;
+      width:200px;height:200px;border-radius:50%;
+      background:radial-gradient(circle,rgba(201,169,110,.15) 0%,transparent 70%);
+      pointer-events:none;
+    }
+    .discount-badge{
+      background:var(--gold);color:#fff;
+      border-radius:50%;width:80px;height:80px;
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      flex-shrink:0;
+      font-family:var(--serif);
+    }
+    .discount-pct{font-size:1.6rem;font-weight:600;line-height:1}
+    .discount-off{font-size:.6rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase}
+    .discount-text h3{font-family:var(--serif);font-size:1.4rem;font-weight:400;color:#fff;margin-bottom:6px}
+    .discount-text p{font-size:.82rem;color:rgba(255,255,255,.6);line-height:1.65}
+    .discount-text p strong{color:var(--gold)}
 
-    /* MAP */
-    .mapsec{background:var(--char);padding:0}
-    .maplay{display:grid;grid-template-columns:1fr 1.6fr;min-height:520px}
-    .mapinfo{padding:72px 56px;display:flex;flex-direction:column;justify-content:center}
-    .mapadr{font-size:1rem;color:rgba(255,255,255,.65);margin-bottom:32px;line-height:1.7}
-    .mapadr strong{color:#fff;display:block}
+    /* ── PRICING ── */
+    .price-sec{background:var(--white)}
+    .price-lay{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
+    .price-card{background:var(--warm);border-radius:20px;padding:44px}
+    .price-amt{font-family:var(--serif);font-size:4rem;font-weight:300;color:var(--charcoal);line-height:1}
+    .price-amt sup{font-size:1.5rem;vertical-align:super}
+    .price-amt sub{font-size:1.1rem;color:var(--mid)}
+    .price-note{font-size:.76rem;color:var(--light);margin-top:7px}
+    .price-div{height:1px;background:var(--warm2);margin:26px 0}
+    .price-inc{display:flex;flex-direction:column;gap:11px}
+    .pinc{display:flex;align-items:center;gap:10px;font-size:.875rem;color:var(--mid)}
+    .pinc::before{content:'✓';color:var(--gold);font-weight:700}
+    .cal-wrap{background:var(--white);border-radius:20px;padding:30px;box-shadow:var(--shadow)}
+    .cal-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+    .cal-ttl{font-family:var(--serif);font-size:1.2rem}
+    .cal-btn{background:none;border:1px solid var(--warm2);border-radius:7px;width:32px;height:32px;cursor:pointer;color:var(--mid);font-size:1rem;transition:border-color .2s;display:flex;align-items:center;justify-content:center}
+    .cal-btn:hover{border-color:var(--gold)}
+    .c-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}
+    .c-dh{text-align:center;font-size:.62rem;text-transform:uppercase;letter-spacing:.08em;color:var(--light);padding:7px 0}
+    .c-d{aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:7px;cursor:pointer;transition:background .15s}
+    .c-d:hover:not(.empty):not(.past){background:var(--warm)}
+    .c-d.today{background:var(--gold-light)}
+    .c-d.booked{background:var(--warm2);cursor:not-allowed;opacity:.5}
+    .c-d .dn{font-size:.8rem}
+    .c-d.past .dn{color:var(--light);cursor:default}
+    .c-d .dp{font-size:.56rem;color:var(--gold);margin-top:1px}
+
+    /* ── MAP ── */
+    .map-sec{background:var(--charcoal);padding:0}
+    .map-lay{display:grid;grid-template-columns:1fr 1.6fr;min-height:520px}
+    .map-info{padding:72px 52px;display:flex;flex-direction:column;justify-content:center}
+    .map-info .lbl{color:var(--gold)}
+    .map-info .h2{color:#fff;margin-bottom:26px}
+    .map-addr{font-size:.95rem;color:rgba(255,255,255,.6);margin-bottom:30px;line-height:1.75}
+    .map-addr strong{color:#fff;display:block}
     .nearby{display:flex;flex-direction:column;gap:12px}
-    .nbi{display:flex;align-items:center;gap:12px}
-    .nbic{width:34px;height:34px;background:rgba(255,255,255,.07);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
-    .nbt{font-size:.85rem;color:rgba(255,255,255,.65)}
-    .nbt strong{color:#fff}
-    .mapemb iframe{width:100%;height:100%;min-height:520px;border:none;display:block;filter:grayscale(15%) contrast(1.05)}
+    .nb{display:flex;align-items:center;gap:12px}
+    .nb-icon{width:34px;height:34px;background:rgba(255,255,255,.07);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0}
+    .nb-txt{font-size:.83rem;color:rgba(255,255,255,.6)}
+    .nb-txt strong{color:#fff}
+    .map-embed iframe{width:100%;height:100%;min-height:520px;border:none;display:block;filter:grayscale(15%) contrast(1.05)}
 
-    /* FAQ */
-    .faqsec{background:var(--warm)}
-    .faqlay{display:grid;grid-template-columns:1fr 1.8fr;gap:64px;align-items:start}
-    .faqitem{border-bottom:1px solid var(--warm2)}
-    .faqq{display:flex;align-items:center;justify-content:space-between;padding:20px 0;cursor:pointer;font-size:.95rem;font-weight:500;color:var(--char);gap:16px;transition:color .2s}
-    .faqq:hover,.faqq.open{color:var(--gold)}
-    .faqch{font-size:1.1rem;transition:transform .3s;flex-shrink:0;color:var(--gold)}
-    .faqq.open .faqch{transform:rotate(180deg)}
-    .faqa{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s}
-    .faqa.open{max-height:400px;padding-bottom:20px}
-    .faqa p{font-size:.875rem;color:var(--mid);line-height:1.78}
+    /* ── FAQ ── */
+    .faq-sec{background:var(--warm)}
+    .faq-lay{display:grid;grid-template-columns:1fr 1.8fr;gap:64px;align-items:start}
+    .faq-list{display:flex;flex-direction:column}
+    .faq-item{border-bottom:1px solid var(--warm2)}
+    .faq-q{display:flex;align-items:center;justify-content:space-between;padding:20px 0;cursor:pointer;font-size:.93rem;font-weight:500;color:var(--charcoal);gap:16px;transition:color .2s;background:none;border:none;width:100%;text-align:left}
+    .faq-q:hover,.faq-q.open{color:var(--gold)}
+    .faq-chev{font-size:1.1rem;transition:transform .3s;flex-shrink:0;color:var(--gold)}
+    .faq-q.open .faq-chev{transform:rotate(180deg)}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s}
+    .faq-a.open{max-height:400px;padding-bottom:20px}
+    .faq-a p{font-size:.875rem;color:var(--mid);line-height:1.8}
 
-    /* CONTACT */
-    .csect{background:var(--char)}
-    .clay{display:grid;grid-template-columns:1fr 1.35fr;gap:80px;align-items:start}
-    .cmeth{margin-top:44px;display:flex;flex-direction:column;gap:18px}
-    .cm{display:flex;align-items:center;gap:14px;text-decoration:none;color:rgba(255,255,255,.68);font-size:.9rem;transition:color .3s}
-    .cm:hover{color:var(--gold)}
-    .cmi{width:42px;height:42px;border-radius:10px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
-    .cmdl{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--light);margin-bottom:2px}
-    .bform{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:44px}
-    .ftitle{font-family:var(--serif);font-size:1.75rem;font-weight:400;color:#fff;margin-bottom:28px}
-    .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    .fg{display:flex;flex-direction:column;gap:7px;margin-bottom:14px}
-    .fg label{font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45)}
-    .fg input,.fg select,.fg textarea{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:9px;padding:13px 16px;font-family:var(--sans);font-size:.875rem;color:#fff;outline:none;transition:border-color .3s;width:100%}
-    .fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,.22)}
+    /* ── CONTACT ── */
+    .con-sec{background:var(--charcoal)}
+    .con-lay{display:grid;grid-template-columns:1fr 1.35fr;gap:80px;align-items:start}
+    .con-info .h2{color:#fff}
+    .con-info .body-t{color:rgba(255,255,255,.5)}
+    .c-meths{margin-top:42px;display:flex;flex-direction:column;gap:16px}
+    .c-meth{display:flex;align-items:center;gap:14px;text-decoration:none;color:rgba(255,255,255,.65);font-size:.88rem;transition:color .3s}
+    .c-meth:hover{color:var(--gold)}
+    .c-ico{width:42px;height:42px;border-radius:10px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+    .c-dl{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--light);margin-bottom:2px}
+    .bform{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:42px}
+    .form-ttl{font-family:var(--serif);font-size:1.7rem;font-weight:400;color:#fff;margin-bottom:26px}
+    .f-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .fg{display:flex;flex-direction:column;gap:7px;margin-bottom:13px}
+    .fg label{font-size:.7rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.42)}
+    .fg input,.fg select,.fg textarea{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:9px;padding:13px 15px;font-family:var(--sans);font-size:.875rem;color:#fff;outline:none;transition:border-color .3s;width:100%}
+    .fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,.2)}
     .fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold)}
     .fg select option{background:#1a1a1a}
     .fg textarea{resize:vertical;min-height:90px}
-    .fcap{margin:18px 0}
-    .fsub{width:100%;background:var(--gold);color:#fff;border:none;border-radius:50px;padding:15px;font-family:var(--sans);font-size:.9rem;font-weight:500;cursor:pointer;transition:all .3s;margin-top:6px}
-    .fsub:hover{background:#b8904d;transform:translateY(-1px)}
-    .fsub:disabled{opacity:.6;cursor:not-allowed;transform:none}
-    .ferr{color:#ff6b6b;font-size:.78rem;margin-top:10px;display:none}
-    .fsucc{display:none;text-align:center;padding:36px 16px}
-    .fsucc-ic{font-size:2.8rem;margin-bottom:14px}
-    .fsucc h3{font-family:var(--serif);font-size:1.7rem;color:#fff;margin-bottom:8px}
-    .fsucc p{color:rgba(255,255,255,.55);font-size:.875rem}
+    .f-cap{margin:18px 0}
+    .f-sub{width:100%;background:var(--gold);color:#fff;border:none;border-radius:50px;padding:15px;font-family:var(--sans);font-size:.9rem;font-weight:500;cursor:pointer;transition:all .3s;margin-top:6px}
+    .f-sub:hover{background:#b8904d;transform:translateY(-1px)}
+    .f-sub:disabled{opacity:.6;cursor:not-allowed;transform:none}
+    .f-err{color:#ff6b6b;font-size:.78rem;margin-top:10px;display:none}
+    .f-ok{display:none;text-align:center;padding:36px 16px}
+    .f-ok-icon{font-size:2.8rem;margin-bottom:14px}
+    .f-ok h3{font-family:var(--serif);font-size:1.7rem;color:#fff;margin-bottom:8px}
+    .f-ok p{color:rgba(255,255,255,.55);font-size:.875rem}
 
-    /* OTA */
-    .ota{background:var(--warm2);padding:48px;text-align:center}
-    .ota p{font-size:.82rem;color:var(--light);margin-bottom:20px}
-    .otal{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-    .otalink{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border:1px solid rgba(0,0,0,.1);border-radius:50px;font-size:.8rem;font-weight:500;color:var(--mid);text-decoration:none;background:var(--w);transition:all .3s}
-    .otalink:hover{border-color:var(--gold);color:var(--gold)}
+    /* ── OTA ── */
+    .ota{background:var(--warm2);padding:44px;text-align:center}
+    .ota p{font-size:.8rem;color:var(--light);margin-bottom:18px}
+    .ota-links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+    .ota-a{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border:1px solid rgba(0,0,0,.1);border-radius:50px;font-size:.8rem;font-weight:500;color:var(--mid);text-decoration:none;background:var(--white);transition:all .3s}
+    .ota-a:hover{border-color:var(--gold);color:var(--gold)}
 
-    /* FOOTER */
-    footer{background:var(--char);border-top:1px solid rgba(255,255,255,.06);padding:36px 48px;text-align:center}
-    .flogo{font-family:var(--serif);font-size:1.5rem;font-weight:600;color:#fff;margin-bottom:10px}
-    .ftxt2{font-size:.78rem;color:rgba(255,255,255,.28)}
+    /* ── FOOTER ── */
+    footer{background:var(--charcoal);border-top:1px solid rgba(255,255,255,.06);padding:48px 48px 28px}
+    .footer-top{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;margin-bottom:40px}
+    .f-brand .f-logo{font-family:var(--serif);font-size:1.6rem;font-weight:600;color:#fff;margin-bottom:10px}
+    .f-brand p{font-size:.8rem;color:rgba(255,255,255,.38);line-height:1.7;max-width:260px}
+    .f-col h4{font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+    .f-col a{display:block;font-size:.82rem;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:10px;transition:color .3s}
+    .f-col a:hover{color:var(--gold)}
+    .footer-bottom{max-width:1140px;margin:0 auto;border-top:1px solid rgba(255,255,255,.07);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+    .f-copy{font-size:.74rem;color:rgba(255,255,255,.25)}
+    .f-legal{display:flex;gap:20px;flex-wrap:wrap}
+    .f-legal a{font-size:.74rem;color:rgba(255,255,255,.35);text-decoration:none;transition:color .3s}
+    .f-legal a:hover{color:var(--gold)}
 
-    /* WHATSAPP */
-    .wa{position:fixed;bottom:26px;right:26px;z-index:200;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(37,211,102,.4);text-decoration:none;transition:all .3s;animation:popIn .5s ease 1.2s both}
+    /* ── MODAL (T&C / Privacy) ── */
+    .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:800;align-items:center;justify-content:center;padding:20px}
+    .modal-overlay.open{display:flex}
+    .modal-box{background:var(--white);border-radius:16px;max-width:720px;width:100%;max-height:85vh;overflow:hidden;display:flex;flex-direction:column}
+    .modal-head{padding:28px 32px;border-bottom:1px solid var(--warm2);display:flex;align-items:center;justify-content:space-between}
+    .modal-head h2{font-family:var(--serif);font-size:1.8rem;font-weight:400;color:var(--charcoal)}
+    .modal-close{background:none;border:none;font-size:1.6rem;cursor:pointer;color:var(--light);transition:color .2s;line-height:1}
+    .modal-close:hover{color:var(--charcoal)}
+    .modal-body{padding:28px 32px;overflow-y:auto;font-size:.875rem;color:var(--mid);line-height:1.82}
+    .modal-body h3{font-family:var(--serif);font-size:1.2rem;color:var(--charcoal);margin:24px 0 8px;font-weight:600}
+    .modal-body h3:first-child{margin-top:0}
+    .modal-body p{margin-bottom:14px}
+    .modal-body ul{padding-left:20px;margin-bottom:14px}
+    .modal-body ul li{margin-bottom:6px}
+    .modal-body a{color:var(--gold)}
+
+    /* ── WA FLOAT ── */
+    .wa{position:fixed;bottom:26px;right:26px;z-index:200;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(37,211,102,.4);text-decoration:none;transition:transform .3s,box-shadow .3s;animation:popIn .5s ease 1.2s both}
     .wa:hover{transform:scale(1.1);box-shadow:0 8px 28px rgba(37,211,102,.5)}
     .wa svg{width:28px;height:28px;fill:#fff}
 
-    /* ANIMATIONS */
+    /* ── ANIMATIONS ── */
     @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
     @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
     @keyframes popIn{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:scale(1)}}
-    .reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
-    .reveal.vis{opacity:1;transform:translateY(0)}
+    .rv{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
+    .rv.vis{opacity:1;transform:translateY(0)}
 
-    /* RESPONSIVE */
+    /* ── RESPONSIVE ── */
     @media(max-width:960px){
-      nav,nav.sc{padding:16px 24px}
-      .nlinks{display:none}
+      nav,nav.sc{padding:16px 22px}
+      .n-links{display:none}
       .hbg{display:flex}
-      section{padding:64px 24px}
-      .stats{padding:28px 24px}
-      .pgrid{grid-template-columns:repeat(6,1fr);grid-auto-rows:50px}
-      .g1{grid-column:1/7;grid-row:1/6}
-      .g2{grid-column:1/4;grid-row:6/10}
-      .g3{grid-column:4/7;grid-row:6/10}
-      .g4{grid-column:1/4;grid-row:10/14}
-      .g5{grid-column:4/7;grid-row:10/14}
-      .g6{grid-column:1/4;grid-row:14/18}
-      .g7{grid-column:4/7;grid-row:14/19}
-      .g8,.g9,.g10,.g11{display:none}
-      .flay{grid-template-columns:1fr}
-      .fimgf{display:none}
-      .rgrid{grid-template-columns:1fr}
-      .play{grid-template-columns:1fr}
-      .maplay{grid-template-columns:1fr}
-      .mapinfo{padding:48px 24px}
-      .mapemb iframe{min-height:320px}
-      .faqlay{grid-template-columns:1fr;gap:0}
-      .clay{grid-template-columns:1fr;gap:40px}
-      .frow{grid-template-columns:1fr}
-      .bform{padding:28px 20px}
+      section{padding:62px 22px}
+      .stats{padding:26px 22px}
+      .photo-grid{grid-template-columns:repeat(6,1fr);grid-auto-rows:50px}
+      .p1{grid-column:1/7;grid-row:1/6}
+      .p2{grid-column:1/4;grid-row:6/10}
+      .p3{grid-column:4/7;grid-row:6/10}
+      .p4{grid-column:1/4;grid-row:10/14}
+      .p5{grid-column:4/7;grid-row:10/14}
+      .p6{grid-column:1/4;grid-row:14/18}
+      .p7{grid-column:4/7;grid-row:14/19}
+      .p8,.p9,.p10,.p11{display:none}
+      .feat-lay{grid-template-columns:1fr;gap:36px}
+      .feat-float{display:none}
+      .rev-grid{grid-template-columns:1fr}
+      .score-wrap{flex-direction:column}
+      .score-big{border-right:none;padding-right:0;padding-bottom:16px;border-bottom:1px solid var(--warm2);width:100%}
+      .score-bars{padding-left:0}
+      .price-lay{grid-template-columns:1fr}
+      .map-lay{grid-template-columns:1fr}
+      .map-info{padding:48px 22px}
+      .map-embed iframe{min-height:300px}
+      .faq-lay{grid-template-columns:1fr;gap:32px}
+      .con-lay{grid-template-columns:1fr;gap:36px}
+      .f-row{grid-template-columns:1fr}
+      .bform{padding:26px 18px}
       .stat:not(:last-child)::after{display:none}
-      .oscore{flex-direction:column}
-      .oscl{border-right:none;border-bottom:1px solid var(--warm2)}
-      .ota{padding:36px 24px}
-      footer{padding:28px 24px}
+      .discount-banner{flex-direction:column;text-align:center;padding:24px}
+      .ota{padding:34px 22px}
+      .footer-top{grid-template-columns:1fr;gap:32px}
+      footer{padding:40px 22px 24px}
+      .footer-bottom{flex-direction:column;align-items:flex-start;gap:12px}
+      .rev-hd{flex-direction:column;align-items:flex-start}
+      .modal-head{padding:20px 22px}
+      .modal-body{padding:20px 22px}
     }
     @media(max-width:480px){
-      .htitle{font-size:2.8rem}
-      .ctar{flex-direction:column;align-items:center}
+      .h-title{font-size:2.8rem}
+      .cta-row{flex-direction:column;align-items:center}
+      .gal-hd{flex-direction:column}
     }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
+<!-- ═══════════════════════════════════════════════
+     GDPR COOKIE BANNER
+═══════════════════════════════════════════════ -->
+<div class="cookie-bar" id="cookieBar">
+  <div class="cookie-txt">
+    🍪 We use cookies to improve your experience and analyse site traffic. By clicking <strong>Accept</strong>, you consent to our use of cookies as described in our <a href="#" onclick="openModal('privacy');return false">Privacy Policy</a>.
+  </div>
+  <div class="cookie-btns">
+    <button class="ck-accept" onclick="setCookie('accepted')">Accept All</button>
+    <button class="ck-decline" onclick="setCookie('declined')">Decline</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════════════ -->
 <nav id="nav">
-  <a href="#" class="nl">eLiving Space</a>
-  <div class="nlinks">
+  <a href="#" class="n-logo">eLiving Space</a>
+  <div class="n-links">
     <a href="#gallery">Gallery</a>
     <a href="#features">The Space</a>
     <a href="#reviews">Reviews</a>
     <a href="#pricing">Pricing</a>
-    <a href="#location">Location</a>
     <a href="#faq">FAQ</a>
-    <a href="#contact" class="ncta">Book Direct</a>
+    <a href="#contact" class="n-cta">Book Direct</a>
   </div>
-  <button class="hbg" onclick="openMenu()"><span></span><span></span><span></span></button>
+  <button class="hbg" id="hbg" onclick="openMob()"><span></span><span></span><span></span></button>
 </nav>
-<div class="mm" id="mm">
-  <button class="mmx" onclick="closeMenu()">✕</button>
-  <a href="#gallery" onclick="closeMenu()">Gallery</a>
-  <a href="#features" onclick="closeMenu()">The Space</a>
-  <a href="#reviews" onclick="closeMenu()">Reviews</a>
-  <a href="#pricing" onclick="closeMenu()">Pricing</a>
-  <a href="#location" onclick="closeMenu()">Location</a>
-  <a href="#faq" onclick="closeMenu()">FAQ</a>
-  <a href="#contact" onclick="closeMenu()">Book Direct</a>
+<div class="mob" id="mob">
+  <button class="mob-x" onclick="closeMob()">✕</button>
+  <a href="#gallery" onclick="closeMob()">Gallery</a>
+  <a href="#features" onclick="closeMob()">The Space</a>
+  <a href="#reviews" onclick="closeMob()">Reviews</a>
+  <a href="#pricing" onclick="closeMob()">Pricing</a>
+  <a href="#faq" onclick="closeMob()">FAQ</a>
+  <a href="#contact" onclick="closeMob()">Book Direct</a>
 </div>
 
-<!-- HERO -->
+<!-- ═══════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════ -->
 <section class="hero" id="home">
-  <div class="hbg-el"></div>
-  <div class="hslides" id="hslides">
-    <div class="hslide active"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161624.JPG" alt="Master bedroom" /></div>
-    <div class="hslide"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161957.jpg" alt="Private terrace" /></div>
-    <div class="hslide"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161805.jpg" alt="Twin bedroom" /></div>
-    <div class="hslide"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_162018.jpg" alt="Kitchen and dining" /></div>
-    <div class="hslide"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_162127.jpg" alt="Luxury bathroom" /></div>
+  <div class="h-bg"></div>
+  <div class="h-slides" id="hSlides">
+    <div class="h-slide on"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161624.JPG" alt="Master bedroom" /></div>
+    <div class="h-slide"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161957.jpg" alt="Private terrace" /></div>
+    <div class="h-slide"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161805.jpg" alt="Twin bedroom" /></div>
+    <div class="h-slide"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_162018.jpg" alt="Kitchen and dining" /></div>
+    <div class="h-slide"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_162127.jpg" alt="Luxury bathroom" /></div>
   </div>
-  <div class="hov"></div>
-  <div class="hcont">
-    <div class="heye">Valencia · Spain · Calle Archena 14</div>
-    <h1 class="htitle">Your <em>home</em><br>in Valencia</h1>
-    <p class="hsub">A beautifully designed 3-bedroom apartment in the heart of Valencia — steps from Bioparc, city centre, and the airport metro.</p>
-    <div class="ctar">
-      <a href="#contact" class="btn btng">✦ Book Direct — Best Rate</a>
-      <a href="#gallery" class="btn btno">Explore the Space →</a>
+  <div class="h-ov"></div>
+  <div class="h-cnt">
+    <div class="h-eye">Valencia · Spain · Calle Archena 14</div>
+    <h1 class="h-title">Your <em>home</em><br>in Valencia</h1>
+    <p class="h-sub">A beautifully designed 3-bedroom apartment in the heart of Valencia — steps from Bioparc, city centre, and the airport metro.</p>
+    <div class="cta-row">
+      <a href="#contact" class="btn btn-g">✦ Book Direct — Save 20%</a>
+      <a href="#gallery" class="btn btn-o">Explore the Space →</a>
     </div>
   </div>
-  <div class="sdots" id="sdots"></div>
-  <div class="hscroll">Discover</div>
+  <div class="s-dots" id="sDots"></div>
+  <div class="h-scroll">Discover</div>
 </section>
 
-<!-- STATS -->
+<!-- ═══════════════════════════════════════════════
+     STATS
+═══════════════════════════════════════════════ -->
 <div class="stats">
-  <div class="si">
-    <div class="stat reveal"><div class="stn">5</div><div class="stl">Max Guests</div></div>
-    <div class="stat reveal"><div class="stn">3</div><div class="stl">Bedrooms</div></div>
-    <div class="stat reveal"><div class="stn">2</div><div class="stl">Bathrooms</div></div>
-    <div class="stat reveal"><div class="stn">€260</div><div class="stl">From / Night</div></div>
-    <div class="stat reveal"><div class="stn">★ 9.4</div><div class="stl">Booking.com Score</div></div>
+  <div class="stats-in">
+    <div class="stat rv"><div class="stat-n">5</div><div class="stat-l">Max Guests</div></div>
+    <div class="stat rv"><div class="stat-n">3</div><div class="stat-l">Bedrooms</div></div>
+    <div class="stat rv"><div class="stat-n">2</div><div class="stat-l">Bathrooms</div></div>
+    <div class="stat rv"><div class="stat-n">€260</div><div class="stat-l">From / Night</div></div>
+    <div class="stat rv"><div class="stat-n">★ 9.4</div><div class="stat-l">Booking.com Score</div></div>
   </div>
 </div>
 
-<!-- GALLERY -->
-<section class="gsec" id="gallery">
-  <div class="con">
-    <div class="ghdr reveal">
-      <div><div class="lbl">The Apartment</div><h2 class="h2">Designed to<br><em>inspire</em></h2></div>
-      <p class="bt" style="max-width:380px">Scandinavian warmth meets Valencia soul — rattan, oak, marble, and natural light throughout every room.</p>
+<!-- ═══════════════════════════════════════════════
+     GALLERY
+═══════════════════════════════════════════════ -->
+<section class="gal-sec" id="gallery">
+  <div class="container">
+    <div class="gal-hd rv">
+      <div>
+        <div class="lbl">The Apartment</div>
+        <h2 class="h2">Designed to<br><em>inspire</em></h2>
+      </div>
+      <p class="body-t" style="max-width:360px">Scandinavian warmth meets Valencia soul — rattan, oak, marble, and natural light throughout. Click any photo to explore.</p>
     </div>
-    <div class="pgrid reveal">
-      <div class="pi2 g1" onclick="openLb(0)"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161624.JPG" alt="Master bedroom — double bed, wooden slatted headboard, ceiling fan" /></div>
-      <div class="pi2 g2" onclick="openLb(1)"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161631.jpg" alt="Master bedroom wide view with wardrobe" /></div>
-      <div class="pi2 g3" onclick="openLb(5)"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161805.jpg" alt="Twin bedroom with two single beds" /></div>
-      <div class="pi2 g4" onclick="openLb(2)"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161703.jpg" alt="Single bedroom with rattan headboard" /></div>
-      <div class="pi2 g5" onclick="openLb(4)"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161744.jpg" alt="Entry hallway leading to terrace" /></div>
-      <div class="pi2 g6" onclick="openLb(9)"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161939.jpg" alt="Full kitchen with black retro fridge" /></div>
-      <div class="pi2 g7" onclick="openLb(10)"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161957.jpg" alt="Private terrace with shade sail and lounge" /></div>
-      <div class="pi2 g8" onclick="openLb(8)"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161915.jpg" alt="Dining area with pendant light" /></div>
-      <div class="pi2 g9" onclick="openLb(12)"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_162040.jpg" alt="Living area with desk and art wall" /></div>
-      <div class="pi2 g10" onclick="openLb(14)"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_162127.jpg" alt="Main bathroom with marble and rain shower" /></div>
-      <div class="pi2 g11" onclick="openLb(13)"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_162107.jpg" alt="Second toilet room with marble walls" /></div>
+    <div class="photo-grid rv">
+      <div class="pi p1" onclick="openLb(0)"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161624.JPG" alt="Master bedroom — double bed, wooden slatted headboard, ceiling fan" /></div>
+      <div class="pi p2" onclick="openLb(1)"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161631.jpg" alt="Master bedroom full view" /></div>
+      <div class="pi p3" onclick="openLb(5)"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161805.jpg" alt="Twin bedroom" /></div>
+      <div class="pi p4" onclick="openLb(2)"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161703.jpg" alt="Single bedroom" /></div>
+      <div class="pi p5" onclick="openLb(4)"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161744.jpg" alt="Entry hallway" /></div>
+      <div class="pi p6" onclick="openLb(9)"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161939.jpg" alt="Full kitchen" /></div>
+      <div class="pi p7" onclick="openLb(10)"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161957.jpg" alt="Private terrace" /></div>
+      <div class="pi p8" onclick="openLb(8)"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161915.jpg" alt="Dining area" /></div>
+      <div class="pi p9" onclick="openLb(12)"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_162040.jpg" alt="Living area" /></div>
+      <div class="pi p10" onclick="openLb(14)"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_162127.jpg" alt="Main bathroom" /></div>
+      <div class="pi p11" onclick="openLb(13)"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_162107.jpg" alt="Second toilet" /></div>
     </div>
-    <p style="text-align:center;margin-top:20px;font-size:.75rem;color:var(--light)">Click any photo to enlarge · All photos are of the actual apartment</p>
   </div>
 </section>
 
 <!-- LIGHTBOX -->
 <div class="lb" id="lb">
-  <button class="lbx" onclick="closeLb()">✕</button>
-  <button class="lbp" onclick="lbNav(-1)">‹</button>
-  <img id="lbimg" src="" alt="Apartment photo" />
-  <button class="lbn" onclick="lbNav(1)">›</button>
+  <button class="lb-x" onclick="closeLb()">✕</button>
+  <button class="lb-p" onclick="lbNav(-1)">‹</button>
+  <img id="lbImg" src="" alt="" />
+  <button class="lb-n" onclick="lbNav(1)">›</button>
+  <div class="lb-count" id="lbCount"></div>
 </div>
 
-<!-- FEATURES -->
-<section class="fsec" id="features">
-  <div class="flay con">
-    <div class="fimgs reveal">
-      <div class="fimgm"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161624.JPG" alt="Master bedroom" /></div>
-      <div class="fimgf"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161957.jpg" alt="Private terrace" /></div>
+<!-- ═══════════════════════════════════════════════
+     FEATURES
+═══════════════════════════════════════════════ -->
+<section class="feat-sec" id="features">
+  <div class="feat-lay container">
+    <div class="feat-img-wrap rv">
+      <div class="feat-main"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161624.JPG" alt="Master bedroom" /></div>
+      <div class="feat-float"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161957.jpg" alt="Private terrace" /></div>
     </div>
-    <div class="reveal">
+    <div class="rv">
       <div class="lbl">What's Included</div>
       <h2 class="h2">Everything you<br><em>need & more</em></h2>
-      <p class="bt">A fully equipped home that feels like a boutique hotel — without the hotel price.</p>
-      <div class="flist">
-        <div class="fitem"><div class="ficon">🛏</div><div class="ftxt"><h4>3 Bedrooms</h4><p>1 master double (king), 1 twin (2 singles), 1 single room — sleeps up to 5 guests.</p></div></div>
-        <div class="fitem"><div class="ficon">🏠</div><div class="ftxt"><h4>Private Terrace</h4><p>Shaded terrace with lounge sofa set, sun loungers, bamboo screens and decorative green wall.</p></div></div>
-        <div class="fitem"><div class="ficon">👨‍🍳</div><div class="ftxt"><h4>Full Kitchen</h4><p>Induction hob, electric oven, microwave, Nespresso, retro fridge-freezer, full cookware & crockery.</p></div></div>
-        <div class="fitem"><div class="ficon">🛁</div><div class="ftxt"><h4>2 Bathrooms</h4><p>Main bathroom with marble-effect walk-in rain shower + basin. Second separate toilet room.</p></div></div>
-        <div class="fitem"><div class="ficon">❄️</div><div class="ftxt"><h4>AC + Ceiling Fans</h4><p>Split-unit air conditioning plus designer wooden ceiling fans in every bedroom.</p></div></div>
-        <div class="fitem"><div class="ficon">📍</div><div class="ftxt"><h4>Prime Location</h4><p>Calle Archena 14 — metro at the door, Bioparc 5 mins, city centre 10 mins, airport 15 mins by metro.</p></div></div>
+      <p class="body-t">A fully equipped home that feels like a boutique hotel — without the hotel price. Book direct and pay less.</p>
+      <div class="feat-list">
+        <div class="fi"><div class="fi-icon">🛏</div><div class="fi-text"><h4>3 Bedrooms</h4><p>1 master double with king bed, 1 twin (2 singles), 1 single bedroom — sleeps up to 5 guests comfortably.</p></div></div>
+        <div class="fi"><div class="fi-icon">🌿</div><div class="fi-text"><h4>Private Terrace</h4><p>Shaded outdoor terrace with lounge sofa set, sun loungers and bamboo privacy screens — your own slice of Valencia sky.</p></div></div>
+        <div class="fi"><div class="fi-icon">👨‍🍳</div><div class="fi-text"><h4>Fully Equipped Kitchen</h4><p>Induction hob, oven, microwave, Nespresso, black retro fridge-freezer, full cookware & crockery.</p></div></div>
+        <div class="fi"><div class="fi-icon">🛁</div><div class="fi-text"><h4>2 Bathrooms</h4><p>Main bathroom with marble-effect walk-in rain shower. Second separate toilet room — both beautifully finished.</p></div></div>
+        <div class="fi"><div class="fi-icon">❄️</div><div class="fi-text"><h4>AC + Wooden Ceiling Fans</h4><p>Designer wooden ceiling fans in every room plus split-unit AC — perfectly cool in peak Valencia summer.</p></div></div>
+        <div class="fi"><div class="fi-icon">📍</div><div class="fi-text"><h4>Unbeatable Location</h4><p>Calle Archena 14. Metro to the airport at the door. Bioparc next door. City centre in minutes.</p></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- REVIEWS -->
-<section class="rsec" id="reviews">
-  <div class="con">
-    <div class="rhdr reveal">
-      <div><div class="lbl">Guest Reviews</div><h2 class="h2">What guests<br><em>say about us</em></h2></div>
-      <div class="bbadge reveal">
+<!-- ═══════════════════════════════════════════════
+     REVIEWS
+═══════════════════════════════════════════════ -->
+<section class="rev-sec" id="reviews">
+  <div class="container">
+    <div class="rev-hd rv">
+      <div>
+        <div class="lbl">Guest Reviews</div>
+        <h2 class="h2">What guests<br><em>say about us</em></h2>
+      </div>
+      <div class="bcom-badge">
         <div>
-          <div class="blogo">booking<span>.</span>com</div>
-          <div class="bstars">★★★★★</div>
+          <div class="badge-logo">booking<span>.</span>com</div>
+          <div class="badge-stars">★★★★★</div>
         </div>
-        <div style="width:1px;height:48px;background:var(--warm2)"></div>
-        <div><div class="bscore">9.4</div></div>
+        <div style="width:1px;height:50px;background:var(--warm2)"></div>
+        <div class="badge-score">9.4</div>
         <div>
-          <div class="blabel">Wonderful</div>
-          <div class="bcount">Verified guest reviews</div>
-          <div style="margin-top:6px;font-size:.68rem;color:var(--light)">🏅 Traveller Award 2025</div>
+          <div class="badge-lbl">Wonderful</div>
+          <div class="badge-ct">Verified guest reviews</div>
+          <div style="margin-top:5px;font-size:.66rem;color:#0071c2;font-weight:600">🏅 Traveller Award 2025</div>
         </div>
       </div>
     </div>
-    <div class="rgrid">
-      <div class="rcard rhl reveal">
-        <div class="rtop"><div class="rav">S</div><div><div class="rname">Sara K.</div><div class="rorigin">Germany · Family trip</div></div></div>
-        <div class="rstars">★★★★★</div>
-        <div class="rtext">"The apartment is absolutely beautiful — the photos don't do it justice. Spotlessly clean, stylish and exactly as described. The host is incredibly friendly and helpful. We'll definitely be back."</div>
-        <div class="rplat">via Booking.com · Verified stay</div>
+    <div class="rev-grid">
+      <div class="rc rc-hl rv">
+        <div class="rc-top"><div class="rc-av">S</div><div><div class="rc-name">Sara K.</div><div class="rc-origin">Germany · Family trip</div></div></div>
+        <div class="rc-stars">★★★★★</div>
+        <div class="rc-txt">"The apartment is absolutely beautiful — the photos don't do it justice. Spotlessly clean, stylish and exactly as described. The host is incredibly friendly and helpful. We'll definitely be back."</div>
+        <div class="rc-pl">via Booking.com · Verified stay</div>
       </div>
-      <div class="rcard reveal">
-        <div class="rtop"><div class="rav">M</div><div><div class="rname">Marco T.</div><div class="rorigin">Italy · Couple</div></div></div>
-        <div class="rstars">★★★★★</div>
-        <div class="rtext">"Perfect location — metro to the airport is literally at the front door and Bioparc is just minutes away. The terrace for evening wine was perfect. Highly recommended!"</div>
-        <div class="rplat">via Booking.com · Verified stay</div>
+      <div class="rc rv">
+        <div class="rc-top"><div class="rc-av">M</div><div><div class="rc-name">Marco T.</div><div class="rc-origin">Italy · Couple</div></div></div>
+        <div class="rc-stars">★★★★★</div>
+        <div class="rc-txt">"Perfect location — metro to the airport is literally at the front door and Bioparc is minutes away. The apartment felt like a boutique hotel. Loved the terrace for evening wine. Highly recommended!"</div>
+        <div class="rc-pl">via Booking.com · Verified stay</div>
       </div>
-      <div class="rcard reveal">
-        <div class="rtop"><div class="rav">A</div><div><div class="rname">Anna P.</div><div class="rorigin">Netherlands · Group</div></div></div>
-        <div class="rstars">★★★★★</div>
-        <div class="rtext">"Extremely friendly owner, always happy to help. Very convenient — nearby is the metro, a supermarket, cafes and a park. The apartment itself is stunning inside."</div>
-        <div class="rplat">via Booking.com · Verified stay</div>
+      <div class="rc rv">
+        <div class="rc-top"><div class="rc-av">A</div><div><div class="rc-name">Anna P.</div><div class="rc-origin">Netherlands · Group</div></div></div>
+        <div class="rc-stars">★★★★★</div>
+        <div class="rc-txt">"Extremely friendly owner who is always happy to help. Very convenient location — nearby is not only the metro station but also a supermarket, cafes and a park. Stunning Scandinavian design."</div>
+        <div class="rc-pl">via Booking.com · Verified stay</div>
       </div>
-      <div class="rcard reveal">
-        <div class="rtop"><div class="rav">J</div><div><div class="rname">James R.</div><div class="rorigin">United Kingdom · Business</div></div></div>
-        <div class="rstars">★★★★★</div>
-        <div class="rtext">"Met us on time and gave excellent restaurant recommendations. The apartment is even better in person. Gorgeous design, well-equipped kitchen, great WiFi for remote work. 10/10."</div>
-        <div class="rplat">via Airbnb · Verified stay</div>
+      <div class="rc rv">
+        <div class="rc-top"><div class="rc-av">J</div><div><div class="rc-name">James R.</div><div class="rc-origin">United Kingdom · Business</div></div></div>
+        <div class="rc-stars">★★★★★</div>
+        <div class="rc-txt">"Met us on time and gave excellent local restaurant recommendations. Gorgeous design, very well equipped kitchen, and the WiFi is great for remote work. Exceptional stay."</div>
+        <div class="rc-pl">via Airbnb · Verified stay</div>
       </div>
-      <div class="rcard reveal">
-        <div class="rtop"><div class="rav">L</div><div><div class="rname">Luisa M.</div><div class="rorigin">Spain · Family</div></div></div>
-        <div class="rstars">★★★★★</div>
-        <div class="rtext">"Apartamento precioso y muy bien decorado. Limpio, cómodo y la ubicación es ideal. La terraza privada fue perfecta para las noches de verano. Muy recomendable para familias."</div>
-        <div class="rplat">via Booking.com · Verified stay</div>
+      <div class="rc rv">
+        <div class="rc-top"><div class="rc-av">E</div><div><div class="rc-name">Elena V.</div><div class="rc-origin">France · Couple</div></div></div>
+        <div class="rc-stars">★★★★★</div>
+        <div class="rc-txt">"The host even brought us delicious fresh Valencia oranges as a welcome gift! Quiet street but perfectly connected. Beautiful design that feels very premium. Outstanding value."</div>
+        <div class="rc-pl">via Booking.com · Verified stay</div>
       </div>
-      <div class="rcard reveal">
-        <div class="rtop"><div class="rav">E</div><div><div class="rname">Elena V.</div><div class="rorigin">France · Couple</div></div></div>
-        <div class="rstars">★★★★★</div>
-        <div class="rtext">"The host brought us fresh Valencia oranges as a welcome gift — a lovely touch. Quiet street but perfectly connected. Beautiful Scandinavian design, very premium feel. Outstanding value."</div>
-        <div class="rplat">via Booking.com · Verified stay</div>
+      <div class="rc rv">
+        <div class="rc-top"><div class="rc-av">L</div><div><div class="rc-name">Luisa M.</div><div class="rc-origin">Spain · Family</div></div></div>
+        <div class="rc-stars">★★★★★</div>
+        <div class="rc-txt">"El apartamento es precioso y muy bien decorado. Limpio, cómodo y la ubicación es ideal. La terraza privada fue perfecta para las noches de verano. Muy recomendable. ¡Volveremos!"</div>
+        <div class="rc-pl">via Booking.com · Verified stay</div>
       </div>
     </div>
-    <div class="oscore reveal">
-      <div class="oscl"><div class="oscn">9.4</div><div class="oscll">Wonderful</div><div class="oscs">Booking.com score</div></div>
-      <div class="oscr">
-        <div class="sbrw"><div class="sbrl">Cleanliness</div><div class="sbrt"><div class="sbrf" style="width:96%"></div></div><span style="font-size:.78rem;color:var(--mid)">9.6</span></div>
-        <div class="sbrw"><div class="sbrl">Location</div><div class="sbrt"><div class="sbrf" style="width:95%"></div></div><span style="font-size:.78rem;color:var(--mid)">9.5</span></div>
-        <div class="sbrw"><div class="sbrl">Value</div><div class="sbrt"><div class="sbrf" style="width:93%"></div></div><span style="font-size:.78rem;color:var(--mid)">9.3</span></div>
-        <div class="sbrw"><div class="sbrl">Comfort</div><div class="sbrt"><div class="sbrf" style="width:94%"></div></div><span style="font-size:.78rem;color:var(--mid)">9.4</span></div>
-        <div class="sbrw"><div class="sbrl">Host</div><div class="sbrt"><div class="sbrf" style="width:98%"></div></div><span style="font-size:.78rem;color:var(--mid)">9.8</span></div>
+    <div class="score-wrap rv">
+      <div class="score-big">
+        <div class="score-num">9.4</div>
+        <div class="score-lbl">Wonderful</div>
+        <div class="score-sub">Booking.com score</div>
+      </div>
+      <div class="score-bars">
+        <div class="sb-row"><div class="sb-lbl">Cleanliness</div><div class="sb-track"><div class="sb-fill" style="width:96%"></div></div><div class="sb-val">9.6</div></div>
+        <div class="sb-row"><div class="sb-lbl">Location</div><div class="sb-track"><div class="sb-fill" style="width:95%"></div></div><div class="sb-val">9.5</div></div>
+        <div class="sb-row"><div class="sb-lbl">Value</div><div class="sb-track"><div class="sb-fill" style="width:93%"></div></div><div class="sb-val">9.3</div></div>
+        <div class="sb-row"><div class="sb-lbl">Comfort</div><div class="sb-track"><div class="sb-fill" style="width:94%"></div></div><div class="sb-val">9.4</div></div>
+        <div class="sb-row"><div class="sb-lbl">Host</div><div class="sb-track"><div class="sb-fill" style="width:98%"></div></div><div class="sb-val">9.8</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PRICING + CALENDAR -->
-<section class="psec" id="pricing">
-  <div class="play con">
-    <div class="reveal">
+<!-- ═══════════════════════════════════════════════
+     PRICING + CALENDAR
+═══════════════════════════════════════════════ -->
+<section class="price-sec" id="pricing">
+  <div class="price-lay container">
+    <div class="rv">
       <div class="lbl">Rates & Availability</div>
       <h2 class="h2">Transparent<br><em>pricing</em></h2>
-      <p class="bt" style="margin-bottom:32px">Book direct — no Airbnb fees, no commission. What you see is what you pay.</p>
-      <div class="pcard">
-        <div style="font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px">Nightly Rate</div>
-        <div class="pamt"><sup>€</sup><span id="pval">260</span><sub>/night</sub></div>
-        <div class="pnote">Whole apartment · Up to 5 guests · Min. 2 nights</div>
-        <div class="pdiv"></div>
-        <div class="pinc">
-          <div class="pi3">All linen & towels included</div>
-          <div class="pi3">Welcome pack on arrival</div>
-          <div class="pi3">Zero booking or service fees</div>
-          <div class="pi3">Free self check-in (keybox)</div>
-          <div class="pi3">Direct host support 24/7</div>
-          <div class="pi3">Best rate guaranteed vs OTAs</div>
+      <p class="body-t" style="margin-bottom:24px">Book direct and get the best rate — no fees, no commission. What you see is what you pay.</p>
+
+      <!-- 20% DISCOUNT BANNER -->
+      <div class="discount-banner rv">
+        <div class="discount-badge">
+          <div class="discount-pct">20%</div>
+          <div class="discount-off">OFF</div>
         </div>
-        <a href="#contact" class="btn btng" style="width:100%;justify-content:center;margin-top:28px;display:flex">Request This Rate →</a>
+        <div class="discount-text">
+          <h3>Book Direct &amp; Save 20%</h3>
+          <p>Skip the Airbnb and Booking.com fees. When you book directly with us you pay <strong>our rate only</strong> — no platform commissions, no service charges. Same apartment. Better price. Guaranteed.</p>
+        </div>
+      </div>
+
+      <div class="price-card">
+        <div style="font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px">Direct Booking Rate</div>
+        <div class="price-amt"><sup>€</sup><span id="pVal">260</span><sub>/night</sub></div>
+        <div class="price-note">Whole apartment · Up to 5 guests · Min. 2 nights</div>
+        <div class="price-div"></div>
+        <div class="price-inc">
+          <div class="pinc">All linen &amp; towels included</div>
+          <div class="pinc">Welcome pack on arrival</div>
+          <div class="pinc">Zero booking or service fees</div>
+          <div class="pinc">Free self check-in (keybox)</div>
+          <div class="pinc">Direct host support 24/7</div>
+          <div class="pinc">Best rate guaranteed vs OTAs</div>
+        </div>
+        <a href="#contact" class="btn btn-g" style="width:100%;justify-content:center;margin-top:26px;display:flex">Request This Rate →</a>
       </div>
     </div>
-    <div class="reveal">
-      <div class="csec">
-        <div class="cnav">
-          <button class="cbtn" id="prevM">‹</button>
-          <div class="ctitle" id="ctitle"></div>
-          <button class="cbtn" id="nextM">›</button>
+    <div class="rv">
+      <div class="cal-wrap">
+        <div class="cal-nav">
+          <button class="cal-btn" id="calPrev">‹</button>
+          <div class="cal-ttl" id="calTtl"></div>
+          <button class="cal-btn" id="calNext">›</button>
         </div>
-        <div class="cgrid" id="cgrid"></div>
+        <div class="c-grid" id="cGrid"></div>
         <div style="display:flex;gap:14px;margin-top:14px;flex-wrap:wrap">
-          <div style="display:flex;align-items:center;gap:6px;font-size:.7rem;color:var(--mid)"><div style="width:10px;height:10px;border-radius:50%;background:var(--goldl)"></div>Today</div>
-          <div style="display:flex;align-items:center;gap:6px;font-size:.7rem;color:var(--mid)"><div style="width:10px;height:10px;border-radius:50%;background:var(--warm2)"></div>Unavailable</div>
-          <div style="display:flex;align-items:center;gap:6px;font-size:.7rem;color:var(--mid)"><div style="width:10px;height:10px;border-radius:50%;background:var(--w);border:1px solid var(--warm2)"></div>Available</div>
+          <div style="display:flex;align-items:center;gap:6px;font-size:.68rem;color:var(--mid)"><div style="width:9px;height:9px;border-radius:50%;background:var(--gold-light)"></div>Today</div>
+          <div style="display:flex;align-items:center;gap:6px;font-size:.68rem;color:var(--mid)"><div style="width:9px;height:9px;border-radius:50%;background:var(--warm2)"></div>Unavailable</div>
+          <div style="display:flex;align-items:center;gap:6px;font-size:.68rem;color:var(--mid)"><div style="width:9px;height:9px;border-radius:50%;background:#fff;border:1px solid var(--warm2)"></div>Available</div>
         </div>
-        <p style="font-size:.72rem;color:var(--light);margin-top:14px;line-height:1.65">Calendar is indicative. Contact us to confirm exact availability and receive your personalised quote.</p>
+        <p style="font-size:.7rem;color:var(--light);margin-top:12px;line-height:1.65">Calendar is indicative. Contact us to confirm exact availability and receive a personalised quote.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- MAP & LOCATION -->
-<div class="mapsec" id="location">
-  <div class="maplay">
-    <div class="mapinfo reveal">
-      <div class="lbl" style="color:var(--gold)">Location</div>
-      <h2 class="h2 h2w">Find us in<br><em>Valencia</em></h2>
-      <div class="mapadr"><strong>Calle Archena 14</strong>Valencia City, Spain 46009</div>
+<!-- ═══════════════════════════════════════════════
+     MAP & LOCATION
+═══════════════════════════════════════════════ -->
+<section class="map-sec" id="location">
+  <div class="map-lay">
+    <div class="map-info rv">
+      <div class="lbl">Location</div>
+      <h2 class="h2 h2-w">Find us in<br><em>Valencia</em></h2>
+      <div class="map-addr">
+        <strong>Calle Archena 14</strong>
+        Valencia City, Spain 46009
+      </div>
       <div class="nearby">
-        <div class="nbi"><div class="nbic">🚇</div><div class="nbt"><strong>Nou d'Octubre Metro</strong> — 2 min walk · Direct to airport</div></div>
-        <div class="nbi"><div class="nbic">🦁</div><div class="nbt"><strong>Bioparc Valencia</strong> — 5 min walk · Immersive African zoo</div></div>
-        <div class="nbi"><div class="nbic">🛒</div><div class="nbt"><strong>Supermarket</strong> — 3 min walk · Everything on your doorstep</div></div>
-        <div class="nbi"><div class="nbic">🌿</div><div class="nbt"><strong>Turia Gardens</strong> — 8 min walk · 9km of parks & cafes</div></div>
-        <div class="nbi"><div class="nbic">✈️</div><div class="nbt"><strong>Valencia Airport VLC</strong> — 15 min by metro</div></div>
-        <div class="nbi"><div class="nbic">🏖️</div><div class="nbt"><strong>Valencia Beach</strong> — 20 min by metro or bike</div></div>
+        <div class="nb"><div class="nb-icon">🚇</div><div class="nb-txt"><strong>Nou d'Octubre Metro</strong> — 2 min walk. Direct line to VLC Airport.</div></div>
+        <div class="nb"><div class="nb-icon">🦁</div><div class="nb-txt"><strong>Bioparc Valencia</strong> — 5 min walk. Valencia's famous immersive zoo.</div></div>
+        <div class="nb"><div class="nb-icon">🛒</div><div class="nb-txt"><strong>Supermarket</strong> — 3 min walk. Everything on your doorstep.</div></div>
+        <div class="nb"><div class="nb-icon">🌿</div><div class="nb-txt"><strong>Turia Gardens</strong> — 8 min walk. 9km of parks, bike paths &amp; cafes.</div></div>
+        <div class="nb"><div class="nb-icon">✈️</div><div class="nb-txt"><strong>Valencia Airport (VLC)</strong> — 15 min by metro from the front door.</div></div>
+        <div class="nb"><div class="nb-icon">🏖️</div><div class="nb-txt"><strong>Valencia Beach</strong> — 20 min by metro or bike.</div></div>
       </div>
     </div>
-    <div class="mapemb">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3080.845!2d-0.40747!3d39.47477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd604f4cf3b65b41%3A0x8f47e3fe50cc2f04!2sCalle%20Archena%2C%2014%2C%2046009%20Valencia%2C%20Spain!5e0!3m2!1sen!2ses!4v1717000000000!5m2!1sen!2ses" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="eLiving Space — Calle Archena 14, Valencia"></iframe>
+    <div class="map-embed">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3080.284!2d-0.40654!3d39.47556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6048a4d6d86da1%3A0xa2ed5b3df3d62c77!2sCalle%20Archena%2C%2014%2C%2046009%20Valencia%2C%20Spain!5e0!3m2!1sen!2ses!4v1700000000000!5m2!1sen!2ses" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="eLiving Space — Calle Archena 14, Valencia"></iframe>
     </div>
   </div>
-</div>
+</section>
 
-<!-- FAQ -->
-<section class="faqsec" id="faq">
-  <div class="faqlay con">
-    <div class="reveal">
+<!-- ═══════════════════════════════════════════════
+     FAQ
+═══════════════════════════════════════════════ -->
+<section class="faq-sec" id="faq">
+  <div class="faq-lay container">
+    <div class="rv">
       <div class="lbl">FAQ</div>
       <h2 class="h2">Common<br><em>questions</em></h2>
-      <p class="bt" style="margin-top:12px">Everything you need to know before booking. Still have questions? Just ask us.</p>
-      <a href="https://wa.me/34614272955" target="_blank" class="btn btndk" style="margin-top:32px;display:inline-flex">💬 Ask on WhatsApp</a>
+      <p class="body-t" style="margin-top:12px">Everything you need to know before booking. Still have questions? Message us on WhatsApp anytime.</p>
+      <a href="https://wa.me/34614272955" target="_blank" class="btn btn-d" style="margin-top:28px;display:inline-flex">💬 Ask on WhatsApp</a>
     </div>
-    <div id="faqlist" class="reveal"></div>
+    <div class="faq-list rv" id="faqList"></div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section class="csect" id="contact">
-  <div class="clay con">
-    <div class="reveal">
+<!-- ═══════════════════════════════════════════════
+     CONTACT / BOOKING FORM
+═══════════════════════════════════════════════ -->
+<section class="con-sec" id="contact">
+  <div class="con-lay container">
+    <div class="con-info rv">
       <div class="lbl" style="color:var(--gold)">Book Direct</div>
-      <h2 class="h2 h2w">Reserve your<br><em>Valencia stay</em></h2>
-      <p class="bt" style="color:rgba(255,255,255,.5)">Fill in the form and we'll confirm within a few hours. Or reach us directly below.</p>
-      <div class="cmeth">
-        <a href="https://wa.me/34614272955?text=Hi!%20I'd%20like%20to%20book%20your%20Valencia%20apartment." target="_blank" class="cm">
-          <div class="cmi">💬</div><div><div class="cmdl">WhatsApp</div>+34 614 272 955</div>
+      <h2 class="h2 h2-w">Reserve your<br><em>Valencia stay</em></h2>
+      <p class="body-t">Fill in the form and we'll confirm within a few hours. Or reach us directly below.</p>
+      <div class="c-meths">
+        <a href="https://wa.me/34614272955?text=Hi!%20I'd%20like%20to%20book%20your%20Valencia%20apartment." target="_blank" class="c-meth">
+          <div class="c-ico">💬</div><div><div class="c-dl">WhatsApp</div>+34 614 272 955</div>
         </a>
-        <a href="mailto:jkholdings55@gmail.com" class="cm">
-          <div class="cmi">✉️</div><div><div class="cmdl">Email</div>jkholdings55@gmail.com</div>
+        <a href="mailto:jkholdings55@gmail.com" class="c-meth">
+          <div class="c-ico">✉️</div><div><div class="c-dl">Email</div>jkholdings55@gmail.com</div>
         </a>
-        <a href="https://www.airbnb.com/rooms/1400729233940372057" target="_blank" class="cm">
-          <div class="cmi">🏠</div><div><div class="cmdl">Also on Airbnb</div>View listing →</div>
+        <a href="https://www.airbnb.com/rooms/1400729233940372057" target="_blank" class="c-meth">
+          <div class="c-ico">🏠</div><div><div class="c-dl">Also on Airbnb</div>View listing →</div>
         </a>
-        <a href="https://www.booking.com/hotel/es/bioparc-gem-city-center-amp-airport.html" target="_blank" class="cm">
-          <div class="cmi">🏨</div><div><div class="cmdl">Also on Booking.com</div>View listing →</div>
+        <a href="https://www.booking.com/hotel/es/bioparc-gem-city-center-amp-airport.html" target="_blank" class="c-meth">
+          <div class="c-ico">🏨</div><div><div class="c-dl">Also on Booking.com</div>View listing →</div>
         </a>
       </div>
     </div>
-    <div class="bform reveal">
-      <div id="formwrap">
-        <div class="ftitle">Request a Booking</div>
-        <div class="frow">
-          <div class="fg"><label>First Name *</label><input type="text" id="ff" placeholder="María" /></div>
-          <div class="fg"><label>Last Name *</label><input type="text" id="fl" placeholder="García" /></div>
+    <div class="bform rv">
+      <div id="formWrap">
+        <div class="form-ttl">Request a Booking</div>
+        <div class="f-row">
+          <div class="fg"><label>First Name *</label><input type="text" id="fFirst" placeholder="María" /></div>
+          <div class="fg"><label>Last Name *</label><input type="text" id="fLast" placeholder="García" /></div>
         </div>
-        <div class="fg"><label>Email *</label><input type="email" id="fe" placeholder="you@email.com" /></div>
-        <div class="fg"><label>Phone / WhatsApp</label><input type="tel" id="fp" placeholder="+34 ..." /></div>
-        <div class="frow">
-          <div class="fg"><label>Check-in *</label><input type="date" id="fci" /></div>
-          <div class="fg"><label>Check-out *</label><input type="date" id="fco" /></div>
+        <div class="fg"><label>Email *</label><input type="email" id="fEmail" placeholder="you@email.com" /></div>
+        <div class="fg"><label>Phone / WhatsApp</label><input type="tel" id="fPhone" placeholder="+34 ..." /></div>
+        <div class="f-row">
+          <div class="fg"><label>Check-in *</label><input type="date" id="fIn" /></div>
+          <div class="fg"><label>Check-out *</label><input type="date" id="fOut" /></div>
         </div>
-        <div class="fg"><label>Guests *</label>
-          <select id="fg2">
-            <option value="1">1 Guest</option><option value="2" selected>2 Guests</option>
-            <option value="3">3 Guests</option><option value="4">4 Guests</option><option value="5">5 Guests</option>
+        <div class="fg">
+          <label>Guests *</label>
+          <select id="fGuests">
+            <option value="1">1 Guest</option>
+            <option value="2" selected>2 Guests</option>
+            <option value="3">3 Guests</option>
+            <option value="4">4 Guests</option>
+            <option value="5">5 Guests</option>
           </select>
         </div>
-        <div class="fg"><label>Message</label><textarea id="fm" placeholder="Questions, special requests, or just say hello..."></textarea></div>
-        <div class="fcap">
+        <div class="fg"><label>Message</label><textarea id="fMsg" placeholder="Questions, special requests, or just say hello..."></textarea></div>
+        <div class="f-cap">
           <div class="h-captcha" data-sitekey="10000000-ffff-ffff-ffff-000000000001" data-theme="dark"></div>
-          <p style="font-size:.66rem;color:rgba(255,255,255,.22);margin-top:6px">Protected by hCaptcha — register your free sitekey at hcaptcha.com</p>
+          <p style="font-size:.66rem;color:rgba(255,255,255,.22);margin-top:6px">Protected by hCaptcha — replace with your free sitekey from hcaptcha.com</p>
         </div>
-        <button class="fsub" id="fsub" onclick="sendForm()">Send Booking Request ✦</button>
-        <div class="ferr" id="ferr"></div>
+        <button class="f-sub" id="fBtn" onclick="submitForm()">Send Booking Request ✦</button>
+        <div class="f-err" id="fErr"></div>
       </div>
-      <div class="fsucc" id="fsucc">
-        <div class="fsucc-ic">✓</div>
+      <div class="f-ok" id="fOk">
+        <div class="f-ok-icon">✓</div>
         <h3>Request Sent!</h3>
-        <p>We've received your request and will reply within a few hours. Check your email — and WhatsApp too!</p>
+        <p>We've received your booking request and will reply within a few hours. Check your email — and WhatsApp too!</p>
       </div>
     </div>
   </div>
@@ -638,18 +803,161 @@
 <!-- OTA FALLBACK -->
 <div class="ota">
   <p>Prefer a familiar platform? We're also listed on:</p>
-  <div class="otal">
-    <a href="https://www.airbnb.com/rooms/1400729233940372057" target="_blank" class="otalink">🏠 Book on Airbnb</a>
-    <a href="https://www.booking.com/hotel/es/bioparc-gem-city-center-amp-airport.html" target="_blank" class="otalink">🏨 Book on Booking.com</a>
+  <div class="ota-links">
+    <a href="https://www.airbnb.com/rooms/1400729233940372057" target="_blank" class="ota-a">🏠 Airbnb</a>
+    <a href="https://www.booking.com/hotel/es/bioparc-gem-city-center-amp-airport.html" target="_blank" class="ota-a">🏨 Booking.com</a>
   </div>
 </div>
 
-<!-- FOOTER -->
+<!-- ═══════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════ -->
 <footer>
-  <div class="flogo">eLiving Space</div>
-  <p class="ftxt2">© 2026 eLiving Space · Calle Archena 14, Valencia, Spain</p>
-  <p class="ftxt2" style="margin-top:6px">Direct bookings · Best rate guaranteed · No commission fees</p>
+  <div class="footer-top">
+    <div class="f-brand">
+      <div class="f-logo">eLiving Space</div>
+      <p>Luxury direct-booking apartment in the heart of Valencia. Scandinavian design, Spanish soul. Best rate guaranteed when you book with us.</p>
+    </div>
+    <div class="f-col">
+      <h4>The Apartment</h4>
+      <a href="#gallery">Photo Gallery</a>
+      <a href="#features">Amenities</a>
+      <a href="#pricing">Rates &amp; Pricing</a>
+      <a href="#location">Location &amp; Map</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="f-col">
+      <h4>Contact</h4>
+      <a href="https://wa.me/34614272955" target="_blank">WhatsApp: +34 614 272 955</a>
+      <a href="mailto:jkholdings55@gmail.com">jkholdings55@gmail.com</a>
+      <a href="https://www.airbnb.com/rooms/1400729233940372057" target="_blank">View on Airbnb</a>
+      <a href="https://www.booking.com/hotel/es/bioparc-gem-city-center-amp-airport.html" target="_blank">View on Booking.com</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="f-copy">© 2026 eLiving Space · Calle Archena 14, Valencia, Spain · All rights reserved</div>
+    <div class="f-legal">
+      <a href="#" onclick="openModal('terms');return false">Terms &amp; Conditions</a>
+      <a href="#" onclick="openModal('privacy');return false">Privacy Policy</a>
+      <a href="#" onclick="openModal('cookies');return false">Cookie Policy</a>
+    </div>
+  </div>
 </footer>
+
+<!-- ═══════════════════════════════════════════════
+     MODALS — Terms, Privacy, Cookies
+═══════════════════════════════════════════════ -->
+
+<!-- TERMS & CONDITIONS -->
+<div class="modal-overlay" id="modalTerms">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h2>Terms &amp; Conditions</h2>
+      <button class="modal-close" onclick="closeModal('terms')">✕</button>
+    </div>
+    <div class="modal-body">
+      <p>Last updated: May 2026. Please read these terms carefully before making a booking.</p>
+      <h3>1. Bookings &amp; Confirmation</h3>
+      <p>A booking is confirmed only upon receipt of written confirmation from eLiving Space. Submitting a booking request does not guarantee availability. We reserve the right to decline any booking request.</p>
+      <h3>2. Payment</h3>
+      <p>Direct bookings require a deposit of 30% to confirm the reservation. The remaining balance is due 14 days before check-in. Payment details will be provided in the booking confirmation email.</p>
+      <h3>3. Cancellation Policy</h3>
+      <ul>
+        <li>Cancellation more than 14 days before check-in: full deposit refund.</li>
+        <li>Cancellation 7–14 days before check-in: 50% deposit refund.</li>
+        <li>Cancellation less than 7 days before check-in: no refund.</li>
+      </ul>
+      <p>We strongly recommend travel insurance to cover unexpected cancellations.</p>
+      <h3>4. Check-in &amp; Check-out</h3>
+      <p>Check-in is from 3:00 PM. Check-out is by 11:00 AM. Late check-out must be arranged in advance and is subject to availability.</p>
+      <h3>5. Maximum Occupancy</h3>
+      <p>The apartment accommodates a maximum of 5 guests. Exceeding this limit without prior written consent may result in immediate termination of the stay without refund.</p>
+      <h3>6. Guest Responsibilities</h3>
+      <p>Guests are responsible for the apartment and its contents during the stay. Any damage caused will be charged to the guest. The property must be left in the same condition as found.</p>
+      <h3>7. Prohibited Activities</h3>
+      <p>Smoking is strictly prohibited inside the apartment. Parties and events are not permitted. Pets are not allowed. Noise must be kept to a reasonable level between 10:00 PM and 9:00 AM.</p>
+      <h3>8. Liability</h3>
+      <p>eLiving Space is not liable for any loss, damage, or injury to guests or their belongings during the stay. Guests are responsible for their own personal insurance.</p>
+      <h3>9. Governing Law</h3>
+      <p>These terms are governed by the laws of Spain. Any disputes shall be subject to the exclusive jurisdiction of the courts of Valencia, Spain.</p>
+      <h3>10. Contact</h3>
+      <p>For any questions regarding these terms, contact us at <a href="mailto:jkholdings55@gmail.com">jkholdings55@gmail.com</a> or WhatsApp +34 614 272 955.</p>
+    </div>
+  </div>
+</div>
+
+<!-- PRIVACY POLICY -->
+<div class="modal-overlay" id="modalPrivacy">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h2>Privacy Policy</h2>
+      <button class="modal-close" onclick="closeModal('privacy')">✕</button>
+    </div>
+    <div class="modal-body">
+      <p>Last updated: May 2026. eLiving Space is committed to protecting your personal data in accordance with the EU General Data Protection Regulation (GDPR).</p>
+      <h3>1. Data Controller</h3>
+      <p>The data controller is eLiving Space, Calle Archena 14, Valencia, Spain. Contact: <a href="mailto:jkholdings55@gmail.com">jkholdings55@gmail.com</a></p>
+      <h3>2. Data We Collect</h3>
+      <p>When you submit a booking request, we collect:</p>
+      <ul>
+        <li>Name and contact information (email, phone)</li>
+        <li>Booking details (dates, number of guests)</li>
+        <li>Communications you send us</li>
+      </ul>
+      <p>We also collect anonymised analytics data (pages visited, time on site) if you accept cookies.</p>
+      <h3>3. How We Use Your Data</h3>
+      <ul>
+        <li>To process and manage your booking request</li>
+        <li>To communicate with you about your stay</li>
+        <li>To comply with legal obligations</li>
+        <li>To improve our website (analytics, cookies accepted only)</li>
+      </ul>
+      <h3>4. Legal Basis for Processing</h3>
+      <p>We process your data on the basis of: (a) contract performance — to fulfil your booking; (b) legitimate interest — to improve our service; (c) your consent — for cookies and marketing.</p>
+      <h3>5. Data Retention</h3>
+      <p>Booking data is retained for 3 years after your stay to comply with Spanish tax and accounting requirements. You may request deletion at any time, subject to legal obligations.</p>
+      <h3>6. Third Parties</h3>
+      <p>We use EmailJS to process booking form submissions. Your data is transmitted securely and is not sold or shared with third parties for marketing purposes.</p>
+      <h3>7. Your Rights (GDPR)</h3>
+      <p>You have the right to: access your data, rectify inaccurate data, request erasure, restrict processing, data portability, and object to processing. To exercise these rights, contact <a href="mailto:jkholdings55@gmail.com">jkholdings55@gmail.com</a>.</p>
+      <h3>8. Cookies</h3>
+      <p>We use cookies as described in our <a href="#" onclick="closeModal('privacy');openModal('cookies');return false">Cookie Policy</a>. You may accept or decline non-essential cookies when you first visit the site.</p>
+      <h3>9. Complaints</h3>
+      <p>You have the right to lodge a complaint with the Spanish Data Protection Authority (AEPD) at <a href="https://www.aepd.es" target="_blank">www.aepd.es</a>.</p>
+    </div>
+  </div>
+</div>
+
+<!-- COOKIE POLICY -->
+<div class="modal-overlay" id="modalCookies">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h2>Cookie Policy</h2>
+      <button class="modal-close" onclick="closeModal('cookies')">✕</button>
+    </div>
+    <div class="modal-body">
+      <p>Last updated: May 2026. This policy explains how eLiving Space uses cookies on eliving.space.</p>
+      <h3>What Are Cookies?</h3>
+      <p>Cookies are small text files stored on your device when you visit a website. They help the site remember your preferences and improve your experience.</p>
+      <h3>Cookies We Use</h3>
+      <ul>
+        <li><strong>Essential cookies:</strong> Required for the site to function (e.g. remembering your cookie consent choice). These cannot be disabled.</li>
+        <li><strong>Analytics cookies:</strong> Anonymised data about how visitors use the site (pages viewed, time spent). Only set if you accept cookies.</li>
+        <li><strong>Functionality cookies:</strong> Remember your preferences such as price settings stored in localStorage. No personal data.</li>
+      </ul>
+      <h3>Third-Party Cookies</h3>
+      <p>Google Maps (embedded on our location section) may set cookies when you interact with the map. hCaptcha (on our booking form) uses cookies to detect bots. These are essential for form security.</p>
+      <h3>Managing Cookies</h3>
+      <p>You can control cookies in your browser settings. Disabling all cookies may affect site functionality. You can also change your consent choice at any time by clicking "Cookie Policy" in the footer.</p>
+      <h3>Your Consent</h3>
+      <p>By clicking "Accept All" on our cookie banner, you consent to the use of analytics cookies. Clicking "Decline" means only essential cookies will be used.</p>
+      <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap">
+        <button class="ck-accept" style="padding:10px 20px;font-size:.82rem" onclick="setCookie('accepted');closeModal('cookies')">Accept All Cookies</button>
+        <button class="ck-decline" style="padding:10px 16px;font-size:.82rem;background:var(--warm2);color:var(--mid);border-color:var(--warm2)" onclick="setCookie('declined');closeModal('cookies')">Decline Non-Essential</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- WHATSAPP FLOAT -->
 <a href="https://wa.me/34614272955?text=Hi!%20I'm%20interested%20in%20booking%20your%20Valencia%20apartment." target="_blank" class="wa" title="Chat on WhatsApp">
@@ -659,24 +967,52 @@
 <script>
   emailjs.init('-SduMLzkgFgrXbrYP');
 
-  // NAV
-  window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('sc',scrollY>60));
-  function openMenu(){document.getElementById('mm').classList.add('open')}
-  function closeMenu(){document.getElementById('mm').classList.remove('open')}
+  /* ── COOKIE CONSENT ── */
+  function setCookie(val) {
+    localStorage.setItem('el_cookie', val);
+    document.getElementById('cookieBar').classList.add('hidden');
+  }
+  (function() {
+    if (localStorage.getItem('el_cookie')) {
+      document.getElementById('cookieBar').classList.add('hidden');
+    }
+  })();
 
-  // REVEAL
-  const obs=new IntersectionObserver((e)=>e.forEach((en,i)=>{if(en.isIntersecting){setTimeout(()=>en.target.classList.add('vis'),i*90);obs.unobserve(en.target)}}),{threshold:.08});
-  document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));
+  /* ── NAV ── */
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('sc', window.scrollY > 60));
+  function openMob() { document.getElementById('mob').classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeMob() { document.getElementById('mob').classList.remove('open'); document.body.style.overflow=''; }
 
-  // HERO SLIDER
-  const slides=document.querySelectorAll('.hslide'),dotsEl=document.getElementById('sdots');
-  let cur=0;
-  slides.forEach((_,i)=>{const d=document.createElement('button');d.className='sdot'+(i===0?' active':'');d.onclick=()=>goSlide(i);dotsEl.appendChild(d)});
-  function goSlide(n){slides[cur].classList.remove('active');dotsEl.children[cur].classList.remove('active');cur=(n+slides.length)%slides.length;slides[cur].classList.add('active');dotsEl.children[cur].classList.add('active')}
-  setInterval(()=>goSlide(cur+1),5000);
+  /* ── SCROLL REVEAL ── */
+  const rvObs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) { setTimeout(() => e.target.classList.add('vis'), i * 80); rvObs.unobserve(e.target); }
+    });
+  }, { threshold: 0.07 });
+  document.querySelectorAll('.rv').forEach(r => rvObs.observe(r));
 
-  // LIGHTBOX
-  const lbImgs=[
+  /* ── HERO SLIDER ── */
+  const slides = document.querySelectorAll('.h-slide');
+  const dotsWrap = document.getElementById('sDots');
+  let cur = 0;
+  slides.forEach((_, i) => {
+    const d = document.createElement('button');
+    d.className = 's-dot' + (i === 0 ? ' on' : '');
+    d.onclick = () => goSlide(i);
+    dotsWrap.appendChild(d);
+  });
+  function goSlide(n) {
+    slides[cur].classList.remove('on');
+    dotsWrap.children[cur].classList.remove('on');
+    cur = (n + slides.length) % slides.length;
+    slides[cur].classList.add('on');
+    dotsWrap.children[cur].classList.add('on');
+  }
+  setInterval(() => goSlide(cur + 1), 5200);
+
+  /* ── LIGHTBOX ── */
+  const lbImgs = [
     'https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161624.JPG',
     'https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161631.jpg',
     'https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161703.jpg',
@@ -693,106 +1029,149 @@
     'https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_162107.jpg',
     'https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_162127.jpg',
   ];
-  let lbc=0;
-  function openLb(i){lbc=i;document.getElementById('lbimg').src=lbImgs[i];document.getElementById('lb').classList.add('open');document.body.style.overflow='hidden'}
-  function closeLb(){document.getElementById('lb').classList.remove('open');document.body.style.overflow=''}
-  function lbNav(d){lbc=(lbc+d+lbImgs.length)%lbImgs.length;document.getElementById('lbimg').src=lbImgs[lbc]}
-  document.getElementById('lb').addEventListener('click',function(e){if(e.target===this)closeLb()});
-  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb();if(e.key==='ArrowRight')lbNav(1);if(e.key==='ArrowLeft')lbNav(-1)});
-
-  // CALENDAR
-  let calD=new Date();calD.setDate(1);
-  const PRICE=()=>parseInt(localStorage.getItem('eliving_price')||'260');
-  const BLOCKED=()=>JSON.parse(localStorage.getItem('eliving_blocked')||'[]');
-  function renderCal(){
-    const grid=document.getElementById('cgrid'),title=document.getElementById('ctitle');
-    const y=calD.getFullYear(),m=calD.getMonth();
-    const today=new Date();today.setHours(0,0,0,0);
-    const months=['January','February','March','April','May','June','July','August','September','October','November','December'];
-    title.textContent=`${months[m]} ${y}`;
-    const off=(()=>{const d=new Date(y,m,1).getDay();return d===0?6:d-1})();
-    const days=new Date(y,m+1,0).getDate();
-    const bl=BLOCKED();
-    let h=['Mo','Tu','We','Th','Fr','Sa','Su'].map(d=>`<div class="cdh">${d}</div>`).join('');
-    for(let i=0;i<off;i++)h+=`<div class="cd empty"></div>`;
-    for(let d=1;d<=days;d++){
-      const ds=`${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
-      const td=new Date(y,m,d);
-      const isPast=td<today,isToday=td.getTime()===today.getTime(),isBlocked=bl.includes(ds);
-      let cls='cd';
-      if(isPast)cls+=' past';else if(isBlocked)cls+=' booked';else if(isToday)cls+=' today';
-      const price=(!isPast&&!isBlocked)?`<div class="dp">€${PRICE()}</div>`:'';
-      h+=`<div class="${cls}"><div class="dn">${d}</div>${price}</div>`;
-    }
-    grid.innerHTML=h;
-    document.getElementById('pval').textContent=PRICE();
+  let lbCur = 0;
+  function openLb(i) {
+    lbCur = i;
+    document.getElementById('lbImg').src = lbImgs[i];
+    document.getElementById('lbCount').textContent = (i + 1) + ' / ' + lbImgs.length;
+    document.getElementById('lb').classList.add('open');
+    document.body.style.overflow = 'hidden';
   }
-  document.getElementById('prevM').onclick=()=>{calD.setMonth(calD.getMonth()-1);renderCal()};
-  document.getElementById('nextM').onclick=()=>{calD.setMonth(calD.getMonth()+1);renderCal()};
+  function closeLb() { document.getElementById('lb').classList.remove('open'); document.body.style.overflow = ''; }
+  function lbNav(d) {
+    lbCur = (lbCur + d + lbImgs.length) % lbImgs.length;
+    document.getElementById('lbImg').src = lbImgs[lbCur];
+    document.getElementById('lbCount').textContent = (lbCur + 1) + ' / ' + lbImgs.length;
+  }
+  document.getElementById('lb').addEventListener('click', function(e) { if (e.target === this) closeLb(); });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { closeLb(); closeModal('terms'); closeModal('privacy'); closeModal('cookies'); }
+    if (e.key === 'ArrowRight') lbNav(1);
+    if (e.key === 'ArrowLeft') lbNav(-1);
+  });
+
+  /* ── CALENDAR ── */
+  let calDate = new Date(); calDate.setDate(1);
+  const PRICE       = () => parseInt(localStorage.getItem('eliving_price') || '260');
+  const BLOCKED     = () => JSON.parse(localStorage.getItem('eliving_blocked') || '[]');
+  const CUSTPRICES  = () => JSON.parse(localStorage.getItem('eliving_custom_prices') || '{}');
+  function renderCal() {
+    const grid = document.getElementById('cGrid');
+    const y = calDate.getFullYear(), m = calDate.getMonth();
+    const today = new Date(); today.setHours(0,0,0,0);
+    const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    document.getElementById('calTtl').textContent = months[m] + ' ' + y;
+    const off = (() => { const d = new Date(y, m, 1).getDay(); return d === 0 ? 6 : d - 1; })();
+    const days = new Date(y, m + 1, 0).getDate();
+    const bl = BLOCKED();
+    const cp = CUSTPRICES();
+    const defP = PRICE();
+    let h = ['Mo','Tu','We','Th','Fr','Sa','Su'].map(d => '<div class="c-dh">' + d + '</div>').join('');
+    for (let i = 0; i < off; i++) h += '<div class="c-d empty"></div>';
+    for (let d = 1; d <= days; d++) {
+      const ds = y + '-' + String(m+1).padStart(2,'0') + '-' + String(d).padStart(2,'0');
+      const td = new Date(y, m, d);
+      const past = td < today, isToday = td.getTime() === today.getTime(), booked = bl.includes(ds);
+      const nightPrice = cp.hasOwnProperty(ds) ? cp[ds] : defP;
+      let cls = 'c-d';
+      if (past) cls += ' past'; else if (booked) cls += ' booked'; else if (isToday) cls += ' today';
+      const price = (!past && !booked) ? '<div class="dp">€' + nightPrice + '</div>' : '';
+      h += '<div class="' + cls + '"><div class="dn">' + d + '</div>' + price + '</div>';
+    }
+    grid.innerHTML = h;
+    document.getElementById('pVal').textContent = defP;
+  }
+  document.getElementById('calPrev').onclick = () => { calDate.setMonth(calDate.getMonth()-1); renderCal(); };
+  document.getElementById('calNext').onclick = () => { calDate.setMonth(calDate.getMonth()+1); renderCal(); };
   renderCal();
 
-  // FORM DATES
-  const td2=new Date().toISOString().split('T')[0];
-  document.getElementById('fci').min=td2;
-  document.getElementById('fco').min=td2;
-  document.getElementById('fci').addEventListener('change',function(){document.getElementById('fco').min=this.value});
+  /* ── FORM DATES ── */
+  const todayStr = new Date().toISOString().split('T')[0];
+  document.getElementById('fIn').min = todayStr;
+  document.getElementById('fOut').min = todayStr;
+  document.getElementById('fIn').addEventListener('change', function() { document.getElementById('fOut').min = this.value; });
 
-  // FAQ
-  const faqs=[
-    {q:'What are the check-in and check-out times?',a:'Check-in is from 3:00 PM, check-out by 11:00 AM. The apartment has a self-check-in keybox so your arrival is fully flexible. Early check-in or late check-out may be possible subject to availability — just ask us in advance.'},
-    {q:'How many guests can stay?',a:'The apartment comfortably sleeps up to 5 guests across 3 bedrooms: 1 master double (king bed), 1 twin room (2 single beds), and 1 single room. Additional guests beyond 5 are not permitted per our house rules.'},
-    {q:'Is parking available?',a:'There is no private parking included. Street parking is available nearby and there are public car parks within a 5-minute walk. The metro station (Nou d\'Octubre) is 2 minutes on foot and connects directly to the city centre and airport.'},
-    {q:'Are pets allowed?',a:'Unfortunately we do not accept pets at this property. Please contact us if you have specific requirements and we\'ll do our best to help.'},
-    {q:'Is the apartment suitable for families with children?',a:'Yes, absolutely. The apartment is spacious and well-suited to families. The private terrace is great for kids. Please contact us for details on the building access and floor level.'},
-    {q:'What appliances are in the kitchen?',a:'The kitchen is fully equipped with an induction hob, electric oven, microwave, Nespresso machine, kettle, toaster, full-size retro fridge-freezer, and all the cookware, crockery and cutlery you need.'},
-    {q:'Is there air conditioning?',a:'Yes — split-unit air conditioning in the main living areas, plus stylish wooden ceiling fans in every bedroom. The apartment stays cool and comfortable even in peak Valencia summer.'},
-    {q:'What is the cancellation policy?',a:'Our standard policy allows free cancellation up to 7 days before check-in. Cancellations within 7 days may be subject to a partial charge. Contact us directly at booking to discuss flexible arrangements.'},
-    {q:'Is there WiFi?',a:'Yes, the apartment has high-speed fibre WiFi throughout. It\'s fast enough for video calls and remote work — ideal for digital nomads and business travellers.'},
-    {q:'Why book direct instead of Airbnb or Booking.com?',a:'Booking directly means you get our best rate — OTAs add 15–20% in service fees on top. You also get more personal service, direct communication with the host, and the flexibility to discuss specific needs. Same apartment, better price, guaranteed.'},
+  /* ── FAQ ── */
+  const faqs = [
+    { q: 'What are the check-in and check-out times?', a: 'Check-in is from 3:00 PM and check-out is by 11:00 AM. The apartment has a self-check-in keybox so your arrival is completely flexible. Early check-in or late check-out may be possible subject to availability — just ask us in advance.' },
+    { q: 'How many guests can stay?', a: 'The apartment sleeps up to 5 guests across 3 bedrooms: 1 master double with a king bed, 1 twin bedroom with 2 single beds, and 1 single bedroom. Additional guests beyond 5 are not permitted.' },
+    { q: 'Is parking available?', a: "There is no private parking. Street parking is available nearby and public car parks are within a 5-minute walk. The Nou d'Octubre metro station is a 2-minute walk and connects directly to Valencia Airport — a car is unnecessary for most stays." },
+    { q: 'Are pets allowed?', a: 'Unfortunately we do not accept pets at this property. Please contact us if you have any specific requirements.' },
+    { q: 'Is it suitable for families with children?', a: 'Yes, absolutely. The large open-plan layout and private terrace are well suited to families of up to 5. Please contact us for details about building access and floor level.' },
+    { q: 'What appliances are in the kitchen?', a: 'The kitchen is fully equipped with an induction hob, electric oven, microwave, Nespresso machine, kettle, toaster, full-size retro fridge-freezer, and all the cookware, crockery and cutlery you need.' },
+    { q: 'Is there air conditioning?', a: "Yes — split-unit air conditioning in the main areas and designer wooden ceiling fans in every bedroom. Perfectly cool in Valencia's hot summers." },
+    { q: 'What is your cancellation policy?', a: 'Free cancellation more than 14 days before check-in. 50% refund 7–14 days before. No refund within 7 days. Please see our full Terms & Conditions for details.' },
+    { q: 'Is the WiFi good enough for remote work?', a: 'Yes. High-speed fibre broadband throughout. There is also a dedicated desk area — perfect for remote workers and digital nomads.' },
+    { q: 'Why book direct instead of Airbnb or Booking.com?', a: "Booking direct saves you 15–20% — that's the commission Airbnb and Booking.com charge on top. You get the same apartment, the same host, better service and a lower price. No middleman." },
   ];
-  const fl=document.getElementById('faqlist');
-  faqs.forEach((f,i)=>{
-    fl.innerHTML+=`<div class="faqitem"><div class="faqq" onclick="toggleFaq(${i})" id="fq${i}"><span>${f.q}</span><span class="faqch">▾</span></div><div class="faqa" id="fa${i}"><p>${f.a}</p></div></div>`;
+  const faqEl = document.getElementById('faqList');
+  faqs.forEach((f, i) => {
+    faqEl.innerHTML += '<div class="faq-item"><button class="faq-q" onclick="toggleFaq(' + i + ')" id="fq' + i + '"><span>' + f.q + '</span><span class="faq-chev">▾</span></button><div class="faq-a" id="fa' + i + '"><p>' + f.a + '</p></div></div>';
   });
-  function toggleFaq(i){
-    const q=document.getElementById(`fq${i}`),a=document.getElementById(`fa${i}`);
-    const was=a.classList.contains('open');
-    document.querySelectorAll('.faqa').forEach(el=>el.classList.remove('open'));
-    document.querySelectorAll('.faqq').forEach(el=>el.classList.remove('open'));
-    if(!was){a.classList.add('open');q.classList.add('open')}
+  function toggleFaq(i) {
+    const q = document.getElementById('fq' + i), a = document.getElementById('fa' + i);
+    const wasOpen = a.classList.contains('open');
+    document.querySelectorAll('.faq-a').forEach(el => el.classList.remove('open'));
+    document.querySelectorAll('.faq-q').forEach(el => el.classList.remove('open'));
+    if (!wasOpen) { a.classList.add('open'); q.classList.add('open'); }
   }
 
-  // FORM SUBMIT
-  async function sendForm(){
-    const first=document.getElementById('ff').value.trim();
-    const last=document.getElementById('fl').value.trim();
-    const email=document.getElementById('fe').value.trim();
-    const checkin=document.getElementById('fci').value;
-    const checkout=document.getElementById('fco').value;
-    const guests=document.getElementById('fg2').value;
-    const phone=document.getElementById('fp').value.trim();
-    const msg=document.getElementById('fm').value.trim();
-    const err=document.getElementById('ferr');
-    if(!first||!last||!email||!checkin||!checkout){err.textContent='Please fill in all required fields.';err.style.display='block';return}
-    let cap='';
-    try{cap=hcaptcha.getResponse()}catch(e){}
-    if(!cap){err.textContent='Please complete the CAPTCHA.';err.style.display='block';return}
-    err.style.display='none';
-    const btn=document.getElementById('fsub');
-    btn.textContent='Sending…';btn.disabled=true;
-    const nights=Math.round((new Date(checkout)-new Date(checkin))/86400000);
-    const total=nights*PRICE();
-    try{
-      await emailjs.send('service_2vzoblw','template_42yu96t',{
-        from_name:`${first} ${last}`,from_email:email,phone:phone||'N/A',
-        checkin,checkout,nights,guests,total:`€${total}`,
-        message:msg||'—',to_email:'jkholdings55@gmail.com'
+  /* ── MODALS ── */
+  function openModal(type) {
+    const ids = { terms: 'modalTerms', privacy: 'modalPrivacy', cookies: 'modalCookies' };
+    document.getElementById(ids[type]).classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(type) {
+    const ids = { terms: 'modalTerms', privacy: 'modalPrivacy', cookies: 'modalCookies' };
+    document.getElementById(ids[type]).classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.querySelectorAll('.modal-overlay').forEach(el => {
+    el.addEventListener('click', function(e) { if (e.target === this) { this.classList.remove('open'); document.body.style.overflow = ''; } });
+  });
+
+  /* ── FORM SUBMIT ── */
+  async function submitForm() {
+    const first  = document.getElementById('fFirst').value.trim();
+    const last   = document.getElementById('fLast').value.trim();
+    const email  = document.getElementById('fEmail').value.trim();
+    const inD    = document.getElementById('fIn').value;
+    const outD   = document.getElementById('fOut').value;
+    const guests = document.getElementById('fGuests').value;
+    const phone  = document.getElementById('fPhone').value.trim();
+    const msg    = document.getElementById('fMsg').value.trim();
+    const errEl  = document.getElementById('fErr');
+    if (!first || !last || !email || !inD || !outD) {
+      errEl.textContent = 'Please fill in all required fields.'; errEl.style.display = 'block'; return;
+    }
+    let cap = '';
+    try { cap = hcaptcha.getResponse(); } catch(e) {}
+    if (!cap) { errEl.textContent = 'Please complete the CAPTCHA.'; errEl.style.display = 'block'; return; }
+    errEl.style.display = 'none';
+    const btn = document.getElementById('fBtn');
+    btn.textContent = 'Sending…'; btn.disabled = true;
+    const nights = Math.max(1, Math.round((new Date(outD) - new Date(inD)) / 86400000));
+    const total  = nights * PRICE();
+    try {
+      await emailjs.send('service_2vzoblw', 'template_42yu96t', {
+        from_name: first + ' ' + last,
+        from_email: email,
+        phone: phone || 'Not provided',
+        checkin: inD,
+        checkout: outD,
+        nights: nights,
+        guests: guests,
+        total: '€' + total,
+        message: msg || '—',
+        to_email: 'jkholdings55@gmail.com'
       });
-      document.getElementById('formwrap').style.display='none';
-      document.getElementById('fsucc').style.display='block';
-    }catch{
-      btn.textContent='Send Booking Request ✦';btn.disabled=false;
-      err.textContent='Something went wrong. Please WhatsApp or email us directly.';err.style.display='block';
+      document.getElementById('formWrap').style.display = 'none';
+      document.getElementById('fOk').style.display = 'block';
+    } catch(err) {
+      btn.textContent = 'Send Booking Request ✦'; btn.disabled = false;
+      errEl.textContent = 'Something went wrong. Please WhatsApp or email us directly.';
+      errEl.style.display = 'block';
     }
   }
 </script>
