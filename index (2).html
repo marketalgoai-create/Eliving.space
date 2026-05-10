@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>eLiving Space — Premium Apartment in Valencia, Spain</title>
+  <meta name="description" content="Luxury 3-bedroom apartment in Valencia city centre. Sleeps 5. Private terrace, full kitchen, 2 bathrooms. Book direct from €260/night." />
+  <meta property="og:title" content="eLiving Space — Premium Apartment Valencia" />
+  <meta property="og:description" content="Scandinavian-designed 3-bed apartment steps from Bioparc Valencia. Book direct from €260/night." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://eliving.space" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LodgingBusiness","name":"eLiving Space","description":"Luxury 3-bedroom apartment in Valencia city centre, sleeps up to 5 guests","url":"https://eliving.space","telephone":"+34614272955","email":"jkholdings55@gmail.com","address":{"@type":"PostalAddress","streetAddress":"Calle Archena 14","addressLocality":"Valencia","addressCountry":"ES"},"priceRange":"€260/night"}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --w:#FFFFFF;--warm:#F9F7F4;--warm2:#EDEAE4;--char:#1A1A1A;--mid:#555550;--light:#9A9A94;
+      --gold:#C9A96E;--goldl:#E8D5B0;--serif:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans',sans-serif;
+      --r:12px;--sh:0 4px 32px rgba(26,26,26,.08);--shl:0 12px 60px rgba(26,26,26,.14)
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:var(--sans);background:var(--w);color:var(--char);overflow-x:hidden}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 48px;display:flex;align-items:center;justify-content:space-between;transition:all .4s}
+    nav.sc{background:rgba(255,255,255,.95);backdrop-filter:blur(16px);box-shadow:0 2px 24px rgba(0,0,0,.06);padding:14px 48px}
+    .nl{font-family:var(--serif);font-size:1.5rem;font-weight:600;color:#fff;text-decoration:none;letter-spacing:.02em;transition:color .4s}
+    nav.sc .nl{color:var(--char)}
+    .nlinks{display:flex;gap:28px;align-items:center}
+    .nlinks a{font-size:.78rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.82);text-decoration:none;transition:color .3s}
+    nav.sc .nlinks a{color:var(--mid)}
+    .nlinks a:hover{color:var(--gold)!important}
+    .ncta{background:var(--gold)!important;color:#fff!important;padding:10px 22px;border-radius:50px;font-size:.76rem!important}
+    .ncta:hover{background:#b8904d!important;transform:translateY(-1px)}
+    .hbg{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none}
+    .hbg span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:background .4s}
+    nav.sc .hbg span{background:var(--char)}
+
+    /* MOBILE MENU */
+    .mm{display:none;position:fixed;inset:0;background:var(--char);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:28px}
+    .mm.open{display:flex}
+    .mm a{font-family:var(--serif);font-size:2.2rem;font-weight:300;color:#fff;text-decoration:none}
+    .mm a:hover{color:var(--gold)}
+    .mmx{position:absolute;top:24px;right:28px;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer}
+
+    /* HERO */
+    .hero{position:relative;height:100vh;min-height:640px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .hbg-el{position:absolute;inset:0;background:#141b22}
+    .hslides{position:absolute;inset:0}
+    .hslide{position:absolute;inset:0;opacity:0;transition:opacity 1.4s ease}
+    .hslide.active{opacity:1}
+    .hslide img{width:100%;height:100%;object-fit:cover}
+    .hov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.3) 0%,rgba(0,0,0,.5) 60%,rgba(0,0,0,.72) 100%)}
+    .hcont{position:relative;z-index:2;text-align:center;padding:0 24px;animation:fadeUp 1s ease both .3s}
+    .heye{font-size:.7rem;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+    .htitle{font-family:var(--serif);font-size:clamp(3.2rem,7vw,6.5rem);font-weight:300;color:#fff;line-height:1.04;margin-bottom:22px}
+    .htitle em{font-style:italic;color:var(--goldl)}
+    .hsub{font-size:1.05rem;font-weight:300;color:rgba(255,255,255,.65);max-width:500px;margin:0 auto 48px;line-height:1.75}
+    .ctar{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:16px 36px;border-radius:50px;font-family:var(--sans);font-size:.875rem;font-weight:500;letter-spacing:.04em;text-decoration:none;border:none;cursor:pointer;transition:all .3s}
+    .btng{background:var(--gold);color:#fff;box-shadow:0 4px 20px rgba(201,169,110,.35)}
+    .btng:hover{background:#b8904d;transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,169,110,.45)}
+    .btno{background:transparent;color:rgba(255,255,255,.82);border:1px solid rgba(255,255,255,.28)}
+    .btno:hover{border-color:var(--gold);color:var(--gold)}
+    .btndk{background:var(--char);color:#fff}
+    .btndk:hover{background:#333;transform:translateY(-1px)}
+    .sdots{position:absolute;bottom:78px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:3}
+    .sdot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:all .3s;border:none}
+    .sdot.active{background:var(--gold);transform:scale(1.4)}
+    .hscroll{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.35);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px;animation:bounce 2.4s ease-in-out infinite}
+    .hscroll::after{content:'';display:block;width:1px;height:36px;background:linear-gradient(to bottom,rgba(255,255,255,.35),transparent)}
+
+    /* STATS */
+    .stats{background:var(--char);padding:36px 48px}
+    .si{max-width:1140px;margin:0 auto;display:flex;justify-content:space-around;flex-wrap:wrap}
+    .stat{text-align:center;padding:16px 28px;position:relative}
+    .stat:not(:last-child)::after{content:'';position:absolute;right:0;top:20%;bottom:20%;width:1px;background:rgba(255,255,255,.08)}
+    .stn{font-family:var(--serif);font-size:2.6rem;font-weight:300;color:var(--gold);line-height:1}
+    .stl{font-size:.72rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-top:7px}
+
+    /* SECTIONS */
+    section{padding:96px 48px}
+    .con{max-width:1140px;margin:0 auto}
+    .lbl{font-size:.7rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+    .h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3.4rem);font-weight:300;line-height:1.12;color:var(--char);margin-bottom:18px}
+    .h2 em{font-style:italic}
+    .h2w{color:#fff}
+    .bt{font-size:.97rem;line-height:1.82;color:var(--mid)}
+
+    /* GALLERY */
+    .gsec{background:var(--warm)}
+    .ghdr{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;margin-bottom:48px}
+    .pgrid{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:58px;gap:10px}
+    .pi2{overflow:hidden;border-radius:10px;background:var(--warm2);cursor:pointer}
+    .pi2 img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .55s cubic-bezier(.25,.46,.45,.94)}
+    .pi2:hover img{transform:scale(1.04)}
+    .g1{grid-column:1/8;grid-row:1/7}
+    .g2{grid-column:8/13;grid-row:1/4}
+    .g3{grid-column:8/11;grid-row:4/7}
+    .g4{grid-column:11/13;grid-row:4/7}
+    .g5{grid-column:1/5;grid-row:7/11}
+    .g6{grid-column:5/9;grid-row:7/11}
+    .g7{grid-column:9/13;grid-row:7/12}
+    .g8{grid-column:1/5;grid-row:11/14}
+    .g9{grid-column:5/9;grid-row:11/14}
+    .g10{grid-column:9/11;grid-row:12/15}
+    .g11{grid-column:11/13;grid-row:12/15}
+
+    /* LIGHTBOX */
+    .lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.96);z-index:500;align-items:center;justify-content:center}
+    .lb.open{display:flex}
+    .lb img{max-width:92vw;max-height:90vh;object-fit:contain;border-radius:8px}
+    .lbx{position:absolute;top:20px;right:24px;font-size:2rem;color:#fff;background:none;border:none;cursor:pointer;opacity:.7}
+    .lbx:hover{opacity:1}
+    .lbp,.lbn{position:absolute;top:50%;transform:translateY(-50%);font-size:2.2rem;color:#fff;background:rgba(255,255,255,.1);border:none;cursor:pointer;padding:12px 18px;border-radius:8px;transition:background .2s}
+    .lbp{left:20px}.lbn{right:20px}
+    .lbp:hover,.lbn:hover{background:rgba(255,255,255,.2)}
+
+    /* FEATURES */
+    .fsec{background:var(--w)}
+    .flay{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+    .fimgs{position:relative}
+    .fimgm{border-radius:16px;overflow:hidden;aspect-ratio:3/4;box-shadow:var(--shl)}
+    .fimgm img{width:100%;height:100%;object-fit:cover}
+    .fimgf{position:absolute;bottom:-28px;left:-28px;width:52%;border-radius:12px;overflow:hidden;box-shadow:var(--shl);border:4px solid var(--w)}
+    .fimgf img{width:100%;height:190px;object-fit:cover}
+    .flist{margin-top:36px;display:flex;flex-direction:column;gap:24px}
+    .fitem{display:flex;gap:18px;align-items:flex-start}
+    .ficon{width:46px;height:46px;border-radius:10px;background:var(--warm);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+    .ftxt h4{font-family:var(--serif);font-size:1.1rem;font-weight:600;margin-bottom:3px}
+    .ftxt p{font-size:.85rem;color:var(--mid);line-height:1.65}
+
+    /* REVIEWS */
+    .rsec{background:var(--warm)}
+    .rhdr{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;margin-bottom:48px}
+    .bbadge{display:flex;align-items:center;gap:16px;background:var(--w);border-radius:14px;padding:18px 24px;box-shadow:var(--sh);border:1px solid var(--warm2)}
+    .blogo{font-size:1.1rem;font-weight:700;color:#003580;letter-spacing:-.02em}
+    .blogo span{color:#0071c2}
+    .bscore{font-family:var(--serif);font-size:2.4rem;font-weight:600;color:#003580;line-height:1}
+    .blabel{font-size:.75rem;font-weight:700;color:#003580}
+    .bcount{font-size:.68rem;color:var(--light)}
+    .bstars{color:#FFB700;font-size:.9rem;margin-top:2px}
+    .rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .rcard{background:var(--w);border-radius:14px;padding:28px;box-shadow:var(--sh);border:1px solid transparent;transition:border-color .3s,transform .3s}
+    .rcard:hover{border-color:var(--goldl);transform:translateY(-3px)}
+    .rtop{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+    .rav{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--goldl),var(--gold));display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.1rem;font-weight:600;color:#fff;flex-shrink:0}
+    .rname{font-weight:500;font-size:.9rem}
+    .rorigin{font-size:.75rem;color:var(--light)}
+    .rstars{color:#FFB700;font-size:.85rem;margin-bottom:12px}
+    .rtext{font-size:.875rem;color:var(--mid);line-height:1.72;font-style:italic}
+    .rplat{margin-top:14px;font-size:.7rem;color:var(--light);font-style:normal}
+    .rhl{background:linear-gradient(135deg,var(--char),#1E2B3A);color:#fff}
+    .rhl .rtext{color:rgba(255,255,255,.75)}
+    .rhl .rname{color:#fff}
+    .rhl .rorigin{color:rgba(255,255,255,.5)}
+    .rhl .rplat{color:rgba(255,255,255,.35)}
+    .oscore{display:flex;align-items:center;gap:0;margin-top:40px;background:var(--w);border-radius:14px;box-shadow:var(--sh);overflow:hidden}
+    .oscl{padding:32px 36px;border-right:1px solid var(--warm2);text-align:center}
+    .oscn{font-family:var(--serif);font-size:4rem;font-weight:300;color:var(--gold);line-height:1}
+    .oscll{font-size:1rem;font-weight:500;color:var(--char)}
+    .oscs{font-size:.8rem;color:var(--light)}
+    .oscr{flex:1;padding:24px 32px;display:flex;flex-direction:column;gap:10px}
+    .sbrw{display:flex;align-items:center;gap:10px}
+    .sbrl{font-size:.72rem;color:var(--mid);width:88px}
+    .sbrt{flex:1;height:5px;background:var(--warm2);border-radius:3px;overflow:hidden}
+    .sbrf{height:100%;border-radius:3px;background:var(--gold)}
+
+    /* PRICING */
+    .psec{background:var(--w)}
+    .play{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+    .pcard{background:var(--warm);border-radius:20px;padding:48px}
+    .pamt{font-family:var(--serif);font-size:4.2rem;font-weight:300;color:var(--char);line-height:1}
+    .pamt sup{font-size:1.6rem;vertical-align:super}
+    .pamt sub{font-size:1.1rem;color:var(--mid)}
+    .pnote{font-size:.78rem;color:var(--light);margin-top:8px}
+    .pdiv{height:1px;background:var(--warm2);margin:28px 0}
+    .pinc{display:flex;flex-direction:column;gap:11px}
+    .pi3{display:flex;align-items:center;gap:10px;font-size:.875rem;color:var(--mid)}
+    .pi3::before{content:'✓';color:var(--gold);font-weight:700}
+    .csec{background:var(--w);border-radius:20px;padding:32px;box-shadow:var(--sh)}
+    .cnav{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+    .ctitle{font-family:var(--serif);font-size:1.25rem}
+    .cbtn{background:none;border:1px solid var(--warm2);border-radius:7px;width:33px;height:33px;cursor:pointer;color:var(--mid);font-size:1.1rem;transition:all .2s}
+    .cbtn:hover{border-color:var(--gold)}
+    .cgrid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}
+    .cdh{text-align:center;font-size:.65rem;text-transform:uppercase;letter-spacing:.08em;color:var(--light);padding:7px 0}
+    .cd{aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:7px;cursor:pointer;transition:background .15s}
+    .cd:hover:not(.empty):not(.past){background:var(--warm)}
+    .cd.today{background:var(--goldl)}
+    .cd.booked{background:var(--warm2);cursor:not-allowed;opacity:.5}
+    .cd .dn{font-size:.82rem}
+    .cd.past .dn{color:var(--light);cursor:default}
+    .cd .dp{font-size:.58rem;color:var(--gold);margin-top:1px}
+
+    /* MAP */
+    .mapsec{background:var(--char);padding:0}
+    .maplay{display:grid;grid-template-columns:1fr 1.6fr;min-height:520px}
+    .mapinfo{padding:72px 56px;display:flex;flex-direction:column;justify-content:center}
+    .mapadr{font-size:1rem;color:rgba(255,255,255,.65);margin-bottom:32px;line-height:1.7}
+    .mapadr strong{color:#fff;display:block}
+    .nearby{display:flex;flex-direction:column;gap:12px}
+    .nbi{display:flex;align-items:center;gap:12px}
+    .nbic{width:34px;height:34px;background:rgba(255,255,255,.07);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+    .nbt{font-size:.85rem;color:rgba(255,255,255,.65)}
+    .nbt strong{color:#fff}
+    .mapemb iframe{width:100%;height:100%;min-height:520px;border:none;display:block;filter:grayscale(15%) contrast(1.05)}
+
+    /* FAQ */
+    .faqsec{background:var(--warm)}
+    .faqlay{display:grid;grid-template-columns:1fr 1.8fr;gap:64px;align-items:start}
+    .faqitem{border-bottom:1px solid var(--warm2)}
+    .faqq{display:flex;align-items:center;justify-content:space-between;padding:20px 0;cursor:pointer;font-size:.95rem;font-weight:500;color:var(--char);gap:16px;transition:color .2s}
+    .faqq:hover,.faqq.open{color:var(--gold)}
+    .faqch{font-size:1.1rem;transition:transform .3s;flex-shrink:0;color:var(--gold)}
+    .faqq.open .faqch{transform:rotate(180deg)}
+    .faqa{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s}
+    .faqa.open{max-height:400px;padding-bottom:20px}
+    .faqa p{font-size:.875rem;color:var(--mid);line-height:1.78}
+
+    /* CONTACT */
+    .csect{background:var(--char)}
+    .clay{display:grid;grid-template-columns:1fr 1.35fr;gap:80px;align-items:start}
+    .cmeth{margin-top:44px;display:flex;flex-direction:column;gap:18px}
+    .cm{display:flex;align-items:center;gap:14px;text-decoration:none;color:rgba(255,255,255,.68);font-size:.9rem;transition:color .3s}
+    .cm:hover{color:var(--gold)}
+    .cmi{width:42px;height:42px;border-radius:10px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+    .cmdl{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--light);margin-bottom:2px}
+    .bform{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:44px}
+    .ftitle{font-family:var(--serif);font-size:1.75rem;font-weight:400;color:#fff;margin-bottom:28px}
+    .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .fg{display:flex;flex-direction:column;gap:7px;margin-bottom:14px}
+    .fg label{font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45)}
+    .fg input,.fg select,.fg textarea{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:9px;padding:13px 16px;font-family:var(--sans);font-size:.875rem;color:#fff;outline:none;transition:border-color .3s;width:100%}
+    .fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,.22)}
+    .fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold)}
+    .fg select option{background:#1a1a1a}
+    .fg textarea{resize:vertical;min-height:90px}
+    .fcap{margin:18px 0}
+    .fsub{width:100%;background:var(--gold);color:#fff;border:none;border-radius:50px;padding:15px;font-family:var(--sans);font-size:.9rem;font-weight:500;cursor:pointer;transition:all .3s;margin-top:6px}
+    .fsub:hover{background:#b8904d;transform:translateY(-1px)}
+    .fsub:disabled{opacity:.6;cursor:not-allowed;transform:none}
+    .ferr{color:#ff6b6b;font-size:.78rem;margin-top:10px;display:none}
+    .fsucc{display:none;text-align:center;padding:36px 16px}
+    .fsucc-ic{font-size:2.8rem;margin-bottom:14px}
+    .fsucc h3{font-family:var(--serif);font-size:1.7rem;color:#fff;margin-bottom:8px}
+    .fsucc p{color:rgba(255,255,255,.55);font-size:.875rem}
+
+    /* OTA */
+    .ota{background:var(--warm2);padding:48px;text-align:center}
+    .ota p{font-size:.82rem;color:var(--light);margin-bottom:20px}
+    .otal{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+    .otalink{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border:1px solid rgba(0,0,0,.1);border-radius:50px;font-size:.8rem;font-weight:500;color:var(--mid);text-decoration:none;background:var(--w);transition:all .3s}
+    .otalink:hover{border-color:var(--gold);color:var(--gold)}
+
+    /* FOOTER */
+    footer{background:var(--char);border-top:1px solid rgba(255,255,255,.06);padding:36px 48px;text-align:center}
+    .flogo{font-family:var(--serif);font-size:1.5rem;font-weight:600;color:#fff;margin-bottom:10px}
+    .ftxt2{font-size:.78rem;color:rgba(255,255,255,.28)}
+
+    /* WHATSAPP */
+    .wa{position:fixed;bottom:26px;right:26px;z-index:200;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(37,211,102,.4);text-decoration:none;transition:all .3s;animation:popIn .5s ease 1.2s both}
+    .wa:hover{transform:scale(1.1);box-shadow:0 8px 28px rgba(37,211,102,.5)}
+    .wa svg{width:28px;height:28px;fill:#fff}
+
+    /* ANIMATIONS */
+    @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+    @keyframes popIn{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:scale(1)}}
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
+    .reveal.vis{opacity:1;transform:translateY(0)}
+
+    /* RESPONSIVE */
+    @media(max-width:960px){
+      nav,nav.sc{padding:16px 24px}
+      .nlinks{display:none}
+      .hbg{display:flex}
+      section{padding:64px 24px}
+      .stats{padding:28px 24px}
+      .pgrid{grid-template-columns:repeat(6,1fr);grid-auto-rows:50px}
+      .g1{grid-column:1/7;grid-row:1/6}
+      .g2{grid-column:1/4;grid-row:6/10}
+      .g3{grid-column:4/7;grid-row:6/10}
+      .g4{grid-column:1/4;grid-row:10/14}
+      .g5{grid-column:4/7;grid-row:10/14}
+      .g6{grid-column:1/4;grid-row:14/18}
+      .g7{grid-column:4/7;grid-row:14/19}
+      .g8,.g9,.g10,.g11{display:none}
+      .flay{grid-template-columns:1fr}
+      .fimgf{display:none}
+      .rgrid{grid-template-columns:1fr}
+      .play{grid-template-columns:1fr}
+      .maplay{grid-template-columns:1fr}
+      .mapinfo{padding:48px 24px}
+      .mapemb iframe{min-height:320px}
+      .faqlay{grid-template-columns:1fr;gap:0}
+      .clay{grid-template-columns:1fr;gap:40px}
+      .frow{grid-template-columns:1fr}
+      .bform{padding:28px 20px}
+      .stat:not(:last-child)::after{display:none}
+      .oscore{flex-direction:column}
+      .oscl{border-right:none;border-bottom:1px solid var(--warm2)}
+      .ota{padding:36px 24px}
+      footer{padding:28px 24px}
+    }
+    @media(max-width:480px){
+      .htitle{font-size:2.8rem}
+      .ctar{flex-direction:column;align-items:center}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nl">eLiving Space</a>
+  <div class="nlinks">
+    <a href="#gallery">Gallery</a>
+    <a href="#features">The Space</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#location">Location</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact" class="ncta">Book Direct</a>
+  </div>
+  <button class="hbg" onclick="openMenu()"><span></span><span></span><span></span></button>
+</nav>
+<div class="mm" id="mm">
+  <button class="mmx" onclick="closeMenu()">✕</button>
+  <a href="#gallery" onclick="closeMenu()">Gallery</a>
+  <a href="#features" onclick="closeMenu()">The Space</a>
+  <a href="#reviews" onclick="closeMenu()">Reviews</a>
+  <a href="#pricing" onclick="closeMenu()">Pricing</a>
+  <a href="#location" onclick="closeMenu()">Location</a>
+  <a href="#faq" onclick="closeMenu()">FAQ</a>
+  <a href="#contact" onclick="closeMenu()">Book Direct</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hbg-el"></div>
+  <div class="hslides" id="hslides">
+    <div class="hslide active"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161624.JPG" alt="Master bedroom" /></div>
+    <div class="hslide"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161957.jpg" alt="Private terrace" /></div>
+    <div class="hslide"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161805.jpg" alt="Twin bedroom" /></div>
+    <div class="hslide"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_162018.jpg" alt="Kitchen and dining" /></div>
+    <div class="hslide"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_162127.jpg" alt="Luxury bathroom" /></div>
+  </div>
+  <div class="hov"></div>
+  <div class="hcont">
+    <div class="heye">Valencia · Spain · Calle Archena 14</div>
+    <h1 class="htitle">Your <em>home</em><br>in Valencia</h1>
+    <p class="hsub">A beautifully designed 3-bedroom apartment in the heart of Valencia — steps from Bioparc, city centre, and the airport metro.</p>
+    <div class="ctar">
+      <a href="#contact" class="btn btng">✦ Book Direct — Best Rate</a>
+      <a href="#gallery" class="btn btno">Explore the Space →</a>
+    </div>
+  </div>
+  <div class="sdots" id="sdots"></div>
+  <div class="hscroll">Discover</div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="si">
+    <div class="stat reveal"><div class="stn">5</div><div class="stl">Max Guests</div></div>
+    <div class="stat reveal"><div class="stn">3</div><div class="stl">Bedrooms</div></div>
+    <div class="stat reveal"><div class="stn">2</div><div class="stl">Bathrooms</div></div>
+    <div class="stat reveal"><div class="stn">€260</div><div class="stl">From / Night</div></div>
+    <div class="stat reveal"><div class="stn">★ 9.4</div><div class="stl">Booking.com Score</div></div>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<section class="gsec" id="gallery">
+  <div class="con">
+    <div class="ghdr reveal">
+      <div><div class="lbl">The Apartment</div><h2 class="h2">Designed to<br><em>inspire</em></h2></div>
+      <p class="bt" style="max-width:380px">Scandinavian warmth meets Valencia soul — rattan, oak, marble, and natural light throughout every room.</p>
+    </div>
+    <div class="pgrid reveal">
+      <div class="pi2 g1" onclick="openLb(0)"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161624.JPG" alt="Master bedroom — double bed, wooden slatted headboard, ceiling fan" /></div>
+      <div class="pi2 g2" onclick="openLb(1)"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161631.jpg" alt="Master bedroom wide view with wardrobe" /></div>
+      <div class="pi2 g3" onclick="openLb(5)"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161805.jpg" alt="Twin bedroom with two single beds" /></div>
+      <div class="pi2 g4" onclick="openLb(2)"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161703.jpg" alt="Single bedroom with rattan headboard" /></div>
+      <div class="pi2 g5" onclick="openLb(4)"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161744.jpg" alt="Entry hallway leading to terrace" /></div>
+      <div class="pi2 g6" onclick="openLb(9)"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161939.jpg" alt="Full kitchen with black retro fridge" /></div>
+      <div class="pi2 g7" onclick="openLb(10)"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161957.jpg" alt="Private terrace with shade sail and lounge" /></div>
+      <div class="pi2 g8" onclick="openLb(8)"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161915.jpg" alt="Dining area with pendant light" /></div>
+      <div class="pi2 g9" onclick="openLb(12)"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_162040.jpg" alt="Living area with desk and art wall" /></div>
+      <div class="pi2 g10" onclick="openLb(14)"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_162127.jpg" alt="Main bathroom with marble and rain shower" /></div>
+      <div class="pi2 g11" onclick="openLb(13)"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_162107.jpg" alt="Second toilet room with marble walls" /></div>
+    </div>
+    <p style="text-align:center;margin-top:20px;font-size:.75rem;color:var(--light)">Click any photo to enlarge · All photos are of the actual apartment</p>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb">
+  <button class="lbx" onclick="closeLb()">✕</button>
+  <button class="lbp" onclick="lbNav(-1)">‹</button>
+  <img id="lbimg" src="" alt="Apartment photo" />
+  <button class="lbn" onclick="lbNav(1)">›</button>
+</div>
+
+<!-- FEATURES -->
+<section class="fsec" id="features">
+  <div class="flay con">
+    <div class="fimgs reveal">
+      <div class="fimgm"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161624.JPG" alt="Master bedroom" /></div>
+      <div class="fimgf"><img src="https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161957.jpg" alt="Private terrace" /></div>
+    </div>
+    <div class="reveal">
+      <div class="lbl">What's Included</div>
+      <h2 class="h2">Everything you<br><em>need & more</em></h2>
+      <p class="bt">A fully equipped home that feels like a boutique hotel — without the hotel price.</p>
+      <div class="flist">
+        <div class="fitem"><div class="ficon">🛏</div><div class="ftxt"><h4>3 Bedrooms</h4><p>1 master double (king), 1 twin (2 singles), 1 single room — sleeps up to 5 guests.</p></div></div>
+        <div class="fitem"><div class="ficon">🏠</div><div class="ftxt"><h4>Private Terrace</h4><p>Shaded terrace with lounge sofa set, sun loungers, bamboo screens and decorative green wall.</p></div></div>
+        <div class="fitem"><div class="ficon">👨‍🍳</div><div class="ftxt"><h4>Full Kitchen</h4><p>Induction hob, electric oven, microwave, Nespresso, retro fridge-freezer, full cookware & crockery.</p></div></div>
+        <div class="fitem"><div class="ficon">🛁</div><div class="ftxt"><h4>2 Bathrooms</h4><p>Main bathroom with marble-effect walk-in rain shower + basin. Second separate toilet room.</p></div></div>
+        <div class="fitem"><div class="ficon">❄️</div><div class="ftxt"><h4>AC + Ceiling Fans</h4><p>Split-unit air conditioning plus designer wooden ceiling fans in every bedroom.</p></div></div>
+        <div class="fitem"><div class="ficon">📍</div><div class="ftxt"><h4>Prime Location</h4><p>Calle Archena 14 — metro at the door, Bioparc 5 mins, city centre 10 mins, airport 15 mins by metro.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="rsec" id="reviews">
+  <div class="con">
+    <div class="rhdr reveal">
+      <div><div class="lbl">Guest Reviews</div><h2 class="h2">What guests<br><em>say about us</em></h2></div>
+      <div class="bbadge reveal">
+        <div>
+          <div class="blogo">booking<span>.</span>com</div>
+          <div class="bstars">★★★★★</div>
+        </div>
+        <div style="width:1px;height:48px;background:var(--warm2)"></div>
+        <div><div class="bscore">9.4</div></div>
+        <div>
+          <div class="blabel">Wonderful</div>
+          <div class="bcount">Verified guest reviews</div>
+          <div style="margin-top:6px;font-size:.68rem;color:var(--light)">🏅 Traveller Award 2025</div>
+        </div>
+      </div>
+    </div>
+    <div class="rgrid">
+      <div class="rcard rhl reveal">
+        <div class="rtop"><div class="rav">S</div><div><div class="rname">Sara K.</div><div class="rorigin">Germany · Family trip</div></div></div>
+        <div class="rstars">★★★★★</div>
+        <div class="rtext">"The apartment is absolutely beautiful — the photos don't do it justice. Spotlessly clean, stylish and exactly as described. The host is incredibly friendly and helpful. We'll definitely be back."</div>
+        <div class="rplat">via Booking.com · Verified stay</div>
+      </div>
+      <div class="rcard reveal">
+        <div class="rtop"><div class="rav">M</div><div><div class="rname">Marco T.</div><div class="rorigin">Italy · Couple</div></div></div>
+        <div class="rstars">★★★★★</div>
+        <div class="rtext">"Perfect location — metro to the airport is literally at the front door and Bioparc is just minutes away. The terrace for evening wine was perfect. Highly recommended!"</div>
+        <div class="rplat">via Booking.com · Verified stay</div>
+      </div>
+      <div class="rcard reveal">
+        <div class="rtop"><div class="rav">A</div><div><div class="rname">Anna P.</div><div class="rorigin">Netherlands · Group</div></div></div>
+        <div class="rstars">★★★★★</div>
+        <div class="rtext">"Extremely friendly owner, always happy to help. Very convenient — nearby is the metro, a supermarket, cafes and a park. The apartment itself is stunning inside."</div>
+        <div class="rplat">via Booking.com · Verified stay</div>
+      </div>
+      <div class="rcard reveal">
+        <div class="rtop"><div class="rav">J</div><div><div class="rname">James R.</div><div class="rorigin">United Kingdom · Business</div></div></div>
+        <div class="rstars">★★★★★</div>
+        <div class="rtext">"Met us on time and gave excellent restaurant recommendations. The apartment is even better in person. Gorgeous design, well-equipped kitchen, great WiFi for remote work. 10/10."</div>
+        <div class="rplat">via Airbnb · Verified stay</div>
+      </div>
+      <div class="rcard reveal">
+        <div class="rtop"><div class="rav">L</div><div><div class="rname">Luisa M.</div><div class="rorigin">Spain · Family</div></div></div>
+        <div class="rstars">★★★★★</div>
+        <div class="rtext">"Apartamento precioso y muy bien decorado. Limpio, cómodo y la ubicación es ideal. La terraza privada fue perfecta para las noches de verano. Muy recomendable para familias."</div>
+        <div class="rplat">via Booking.com · Verified stay</div>
+      </div>
+      <div class="rcard reveal">
+        <div class="rtop"><div class="rav">E</div><div><div class="rname">Elena V.</div><div class="rorigin">France · Couple</div></div></div>
+        <div class="rstars">★★★★★</div>
+        <div class="rtext">"The host brought us fresh Valencia oranges as a welcome gift — a lovely touch. Quiet street but perfectly connected. Beautiful Scandinavian design, very premium feel. Outstanding value."</div>
+        <div class="rplat">via Booking.com · Verified stay</div>
+      </div>
+    </div>
+    <div class="oscore reveal">
+      <div class="oscl"><div class="oscn">9.4</div><div class="oscll">Wonderful</div><div class="oscs">Booking.com score</div></div>
+      <div class="oscr">
+        <div class="sbrw"><div class="sbrl">Cleanliness</div><div class="sbrt"><div class="sbrf" style="width:96%"></div></div><span style="font-size:.78rem;color:var(--mid)">9.6</span></div>
+        <div class="sbrw"><div class="sbrl">Location</div><div class="sbrt"><div class="sbrf" style="width:95%"></div></div><span style="font-size:.78rem;color:var(--mid)">9.5</span></div>
+        <div class="sbrw"><div class="sbrl">Value</div><div class="sbrt"><div class="sbrf" style="width:93%"></div></div><span style="font-size:.78rem;color:var(--mid)">9.3</span></div>
+        <div class="sbrw"><div class="sbrl">Comfort</div><div class="sbrt"><div class="sbrf" style="width:94%"></div></div><span style="font-size:.78rem;color:var(--mid)">9.4</span></div>
+        <div class="sbrw"><div class="sbrl">Host</div><div class="sbrt"><div class="sbrf" style="width:98%"></div></div><span style="font-size:.78rem;color:var(--mid)">9.8</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING + CALENDAR -->
+<section class="psec" id="pricing">
+  <div class="play con">
+    <div class="reveal">
+      <div class="lbl">Rates & Availability</div>
+      <h2 class="h2">Transparent<br><em>pricing</em></h2>
+      <p class="bt" style="margin-bottom:32px">Book direct — no Airbnb fees, no commission. What you see is what you pay.</p>
+      <div class="pcard">
+        <div style="font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px">Nightly Rate</div>
+        <div class="pamt"><sup>€</sup><span id="pval">260</span><sub>/night</sub></div>
+        <div class="pnote">Whole apartment · Up to 5 guests · Min. 2 nights</div>
+        <div class="pdiv"></div>
+        <div class="pinc">
+          <div class="pi3">All linen & towels included</div>
+          <div class="pi3">Welcome pack on arrival</div>
+          <div class="pi3">Zero booking or service fees</div>
+          <div class="pi3">Free self check-in (keybox)</div>
+          <div class="pi3">Direct host support 24/7</div>
+          <div class="pi3">Best rate guaranteed vs OTAs</div>
+        </div>
+        <a href="#contact" class="btn btng" style="width:100%;justify-content:center;margin-top:28px;display:flex">Request This Rate →</a>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="csec">
+        <div class="cnav">
+          <button class="cbtn" id="prevM">‹</button>
+          <div class="ctitle" id="ctitle"></div>
+          <button class="cbtn" id="nextM">›</button>
+        </div>
+        <div class="cgrid" id="cgrid"></div>
+        <div style="display:flex;gap:14px;margin-top:14px;flex-wrap:wrap">
+          <div style="display:flex;align-items:center;gap:6px;font-size:.7rem;color:var(--mid)"><div style="width:10px;height:10px;border-radius:50%;background:var(--goldl)"></div>Today</div>
+          <div style="display:flex;align-items:center;gap:6px;font-size:.7rem;color:var(--mid)"><div style="width:10px;height:10px;border-radius:50%;background:var(--warm2)"></div>Unavailable</div>
+          <div style="display:flex;align-items:center;gap:6px;font-size:.7rem;color:var(--mid)"><div style="width:10px;height:10px;border-radius:50%;background:var(--w);border:1px solid var(--warm2)"></div>Available</div>
+        </div>
+        <p style="font-size:.72rem;color:var(--light);margin-top:14px;line-height:1.65">Calendar is indicative. Contact us to confirm exact availability and receive your personalised quote.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP & LOCATION -->
+<div class="mapsec" id="location">
+  <div class="maplay">
+    <div class="mapinfo reveal">
+      <div class="lbl" style="color:var(--gold)">Location</div>
+      <h2 class="h2 h2w">Find us in<br><em>Valencia</em></h2>
+      <div class="mapadr"><strong>Calle Archena 14</strong>Valencia City, Spain 46009</div>
+      <div class="nearby">
+        <div class="nbi"><div class="nbic">🚇</div><div class="nbt"><strong>Nou d'Octubre Metro</strong> — 2 min walk · Direct to airport</div></div>
+        <div class="nbi"><div class="nbic">🦁</div><div class="nbt"><strong>Bioparc Valencia</strong> — 5 min walk · Immersive African zoo</div></div>
+        <div class="nbi"><div class="nbic">🛒</div><div class="nbt"><strong>Supermarket</strong> — 3 min walk · Everything on your doorstep</div></div>
+        <div class="nbi"><div class="nbic">🌿</div><div class="nbt"><strong>Turia Gardens</strong> — 8 min walk · 9km of parks & cafes</div></div>
+        <div class="nbi"><div class="nbic">✈️</div><div class="nbt"><strong>Valencia Airport VLC</strong> — 15 min by metro</div></div>
+        <div class="nbi"><div class="nbic">🏖️</div><div class="nbt"><strong>Valencia Beach</strong> — 20 min by metro or bike</div></div>
+      </div>
+    </div>
+    <div class="mapemb">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3080.845!2d-0.40747!3d39.47477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd604f4cf3b65b41%3A0x8f47e3fe50cc2f04!2sCalle%20Archena%2C%2014%2C%2046009%20Valencia%2C%20Spain!5e0!3m2!1sen!2ses!4v1717000000000!5m2!1sen!2ses" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="eLiving Space — Calle Archena 14, Valencia"></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section class="faqsec" id="faq">
+  <div class="faqlay con">
+    <div class="reveal">
+      <div class="lbl">FAQ</div>
+      <h2 class="h2">Common<br><em>questions</em></h2>
+      <p class="bt" style="margin-top:12px">Everything you need to know before booking. Still have questions? Just ask us.</p>
+      <a href="https://wa.me/34614272955" target="_blank" class="btn btndk" style="margin-top:32px;display:inline-flex">💬 Ask on WhatsApp</a>
+    </div>
+    <div id="faqlist" class="reveal"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="csect" id="contact">
+  <div class="clay con">
+    <div class="reveal">
+      <div class="lbl" style="color:var(--gold)">Book Direct</div>
+      <h2 class="h2 h2w">Reserve your<br><em>Valencia stay</em></h2>
+      <p class="bt" style="color:rgba(255,255,255,.5)">Fill in the form and we'll confirm within a few hours. Or reach us directly below.</p>
+      <div class="cmeth">
+        <a href="https://wa.me/34614272955?text=Hi!%20I'd%20like%20to%20book%20your%20Valencia%20apartment." target="_blank" class="cm">
+          <div class="cmi">💬</div><div><div class="cmdl">WhatsApp</div>+34 614 272 955</div>
+        </a>
+        <a href="mailto:jkholdings55@gmail.com" class="cm">
+          <div class="cmi">✉️</div><div><div class="cmdl">Email</div>jkholdings55@gmail.com</div>
+        </a>
+        <a href="https://www.airbnb.com/rooms/1400729233940372057" target="_blank" class="cm">
+          <div class="cmi">🏠</div><div><div class="cmdl">Also on Airbnb</div>View listing →</div>
+        </a>
+        <a href="https://www.booking.com/hotel/es/bioparc-gem-city-center-amp-airport.html" target="_blank" class="cm">
+          <div class="cmi">🏨</div><div><div class="cmdl">Also on Booking.com</div>View listing →</div>
+        </a>
+      </div>
+    </div>
+    <div class="bform reveal">
+      <div id="formwrap">
+        <div class="ftitle">Request a Booking</div>
+        <div class="frow">
+          <div class="fg"><label>First Name *</label><input type="text" id="ff" placeholder="María" /></div>
+          <div class="fg"><label>Last Name *</label><input type="text" id="fl" placeholder="García" /></div>
+        </div>
+        <div class="fg"><label>Email *</label><input type="email" id="fe" placeholder="you@email.com" /></div>
+        <div class="fg"><label>Phone / WhatsApp</label><input type="tel" id="fp" placeholder="+34 ..." /></div>
+        <div class="frow">
+          <div class="fg"><label>Check-in *</label><input type="date" id="fci" /></div>
+          <div class="fg"><label>Check-out *</label><input type="date" id="fco" /></div>
+        </div>
+        <div class="fg"><label>Guests *</label>
+          <select id="fg2">
+            <option value="1">1 Guest</option><option value="2" selected>2 Guests</option>
+            <option value="3">3 Guests</option><option value="4">4 Guests</option><option value="5">5 Guests</option>
+          </select>
+        </div>
+        <div class="fg"><label>Message</label><textarea id="fm" placeholder="Questions, special requests, or just say hello..."></textarea></div>
+        <div class="fcap">
+          <div class="h-captcha" data-sitekey="10000000-ffff-ffff-ffff-000000000001" data-theme="dark"></div>
+          <p style="font-size:.66rem;color:rgba(255,255,255,.22);margin-top:6px">Protected by hCaptcha — register your free sitekey at hcaptcha.com</p>
+        </div>
+        <button class="fsub" id="fsub" onclick="sendForm()">Send Booking Request ✦</button>
+        <div class="ferr" id="ferr"></div>
+      </div>
+      <div class="fsucc" id="fsucc">
+        <div class="fsucc-ic">✓</div>
+        <h3>Request Sent!</h3>
+        <p>We've received your request and will reply within a few hours. Check your email — and WhatsApp too!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OTA FALLBACK -->
+<div class="ota">
+  <p>Prefer a familiar platform? We're also listed on:</p>
+  <div class="otal">
+    <a href="https://www.airbnb.com/rooms/1400729233940372057" target="_blank" class="otalink">🏠 Book on Airbnb</a>
+    <a href="https://www.booking.com/hotel/es/bioparc-gem-city-center-amp-airport.html" target="_blank" class="otalink">🏨 Book on Booking.com</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="flogo">eLiving Space</div>
+  <p class="ftxt2">© 2026 eLiving Space · Calle Archena 14, Valencia, Spain</p>
+  <p class="ftxt2" style="margin-top:6px">Direct bookings · Best rate guaranteed · No commission fees</p>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/34614272955?text=Hi!%20I'm%20interested%20in%20booking%20your%20Valencia%20apartment." target="_blank" class="wa" title="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+  emailjs.init('-SduMLzkgFgrXbrYP');
+
+  // NAV
+  window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('sc',scrollY>60));
+  function openMenu(){document.getElementById('mm').classList.add('open')}
+  function closeMenu(){document.getElementById('mm').classList.remove('open')}
+
+  // REVEAL
+  const obs=new IntersectionObserver((e)=>e.forEach((en,i)=>{if(en.isIntersecting){setTimeout(()=>en.target.classList.add('vis'),i*90);obs.unobserve(en.target)}}),{threshold:.08});
+  document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));
+
+  // HERO SLIDER
+  const slides=document.querySelectorAll('.hslide'),dotsEl=document.getElementById('sdots');
+  let cur=0;
+  slides.forEach((_,i)=>{const d=document.createElement('button');d.className='sdot'+(i===0?' active':'');d.onclick=()=>goSlide(i);dotsEl.appendChild(d)});
+  function goSlide(n){slides[cur].classList.remove('active');dotsEl.children[cur].classList.remove('active');cur=(n+slides.length)%slides.length;slides[cur].classList.add('active');dotsEl.children[cur].classList.add('active')}
+  setInterval(()=>goSlide(cur+1),5000);
+
+  // LIGHTBOX
+  const lbImgs=[
+    'https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161624.JPG',
+    'https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161631.jpg',
+    'https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161703.jpg',
+    'https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161718.jpg',
+    'https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161744.jpg',
+    'https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161805.jpg',
+    'https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161900.jpg',
+    'https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161855.jpg',
+    'https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161915.jpg',
+    'https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161939.jpg',
+    'https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_161957.jpg',
+    'https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_162018.jpg',
+    'https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_162040.jpg',
+    'https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_162107.jpg',
+    'https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/20260206_162127.jpg',
+  ];
+  let lbc=0;
+  function openLb(i){lbc=i;document.getElementById('lbimg').src=lbImgs[i];document.getElementById('lb').classList.add('open');document.body.style.overflow='hidden'}
+  function closeLb(){document.getElementById('lb').classList.remove('open');document.body.style.overflow=''}
+  function lbNav(d){lbc=(lbc+d+lbImgs.length)%lbImgs.length;document.getElementById('lbimg').src=lbImgs[lbc]}
+  document.getElementById('lb').addEventListener('click',function(e){if(e.target===this)closeLb()});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb();if(e.key==='ArrowRight')lbNav(1);if(e.key==='ArrowLeft')lbNav(-1)});
+
+  // CALENDAR
+  let calD=new Date();calD.setDate(1);
+  const PRICE=()=>parseInt(localStorage.getItem('eliving_price')||'260');
+  const BLOCKED=()=>JSON.parse(localStorage.getItem('eliving_blocked')||'[]');
+  function renderCal(){
+    const grid=document.getElementById('cgrid'),title=document.getElementById('ctitle');
+    const y=calD.getFullYear(),m=calD.getMonth();
+    const today=new Date();today.setHours(0,0,0,0);
+    const months=['January','February','March','April','May','June','July','August','September','October','November','December'];
+    title.textContent=`${months[m]} ${y}`;
+    const off=(()=>{const d=new Date(y,m,1).getDay();return d===0?6:d-1})();
+    const days=new Date(y,m+1,0).getDate();
+    const bl=BLOCKED();
+    let h=['Mo','Tu','We','Th','Fr','Sa','Su'].map(d=>`<div class="cdh">${d}</div>`).join('');
+    for(let i=0;i<off;i++)h+=`<div class="cd empty"></div>`;
+    for(let d=1;d<=days;d++){
+      const ds=`${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+      const td=new Date(y,m,d);
+      const isPast=td<today,isToday=td.getTime()===today.getTime(),isBlocked=bl.includes(ds);
+      let cls='cd';
+      if(isPast)cls+=' past';else if(isBlocked)cls+=' booked';else if(isToday)cls+=' today';
+      const price=(!isPast&&!isBlocked)?`<div class="dp">€${PRICE()}</div>`:'';
+      h+=`<div class="${cls}"><div class="dn">${d}</div>${price}</div>`;
+    }
+    grid.innerHTML=h;
+    document.getElementById('pval').textContent=PRICE();
+  }
+  document.getElementById('prevM').onclick=()=>{calD.setMonth(calD.getMonth()-1);renderCal()};
+  document.getElementById('nextM').onclick=()=>{calD.setMonth(calD.getMonth()+1);renderCal()};
+  renderCal();
+
+  // FORM DATES
+  const td2=new Date().toISOString().split('T')[0];
+  document.getElementById('fci').min=td2;
+  document.getElementById('fco').min=td2;
+  document.getElementById('fci').addEventListener('change',function(){document.getElementById('fco').min=this.value});
+
+  // FAQ
+  const faqs=[
+    {q:'What are the check-in and check-out times?',a:'Check-in is from 3:00 PM, check-out by 11:00 AM. The apartment has a self-check-in keybox so your arrival is fully flexible. Early check-in or late check-out may be possible subject to availability — just ask us in advance.'},
+    {q:'How many guests can stay?',a:'The apartment comfortably sleeps up to 5 guests across 3 bedrooms: 1 master double (king bed), 1 twin room (2 single beds), and 1 single room. Additional guests beyond 5 are not permitted per our house rules.'},
+    {q:'Is parking available?',a:'There is no private parking included. Street parking is available nearby and there are public car parks within a 5-minute walk. The metro station (Nou d\'Octubre) is 2 minutes on foot and connects directly to the city centre and airport.'},
+    {q:'Are pets allowed?',a:'Unfortunately we do not accept pets at this property. Please contact us if you have specific requirements and we\'ll do our best to help.'},
+    {q:'Is the apartment suitable for families with children?',a:'Yes, absolutely. The apartment is spacious and well-suited to families. The private terrace is great for kids. Please contact us for details on the building access and floor level.'},
+    {q:'What appliances are in the kitchen?',a:'The kitchen is fully equipped with an induction hob, electric oven, microwave, Nespresso machine, kettle, toaster, full-size retro fridge-freezer, and all the cookware, crockery and cutlery you need.'},
+    {q:'Is there air conditioning?',a:'Yes — split-unit air conditioning in the main living areas, plus stylish wooden ceiling fans in every bedroom. The apartment stays cool and comfortable even in peak Valencia summer.'},
+    {q:'What is the cancellation policy?',a:'Our standard policy allows free cancellation up to 7 days before check-in. Cancellations within 7 days may be subject to a partial charge. Contact us directly at booking to discuss flexible arrangements.'},
+    {q:'Is there WiFi?',a:'Yes, the apartment has high-speed fibre WiFi throughout. It\'s fast enough for video calls and remote work — ideal for digital nomads and business travellers.'},
+    {q:'Why book direct instead of Airbnb or Booking.com?',a:'Booking directly means you get our best rate — OTAs add 15–20% in service fees on top. You also get more personal service, direct communication with the host, and the flexibility to discuss specific needs. Same apartment, better price, guaranteed.'},
+  ];
+  const fl=document.getElementById('faqlist');
+  faqs.forEach((f,i)=>{
+    fl.innerHTML+=`<div class="faqitem"><div class="faqq" onclick="toggleFaq(${i})" id="fq${i}"><span>${f.q}</span><span class="faqch">▾</span></div><div class="faqa" id="fa${i}"><p>${f.a}</p></div></div>`;
+  });
+  function toggleFaq(i){
+    const q=document.getElementById(`fq${i}`),a=document.getElementById(`fa${i}`);
+    const was=a.classList.contains('open');
+    document.querySelectorAll('.faqa').forEach(el=>el.classList.remove('open'));
+    document.querySelectorAll('.faqq').forEach(el=>el.classList.remove('open'));
+    if(!was){a.classList.add('open');q.classList.add('open')}
+  }
+
+  // FORM SUBMIT
+  async function sendForm(){
+    const first=document.getElementById('ff').value.trim();
+    const last=document.getElementById('fl').value.trim();
+    const email=document.getElementById('fe').value.trim();
+    const checkin=document.getElementById('fci').value;
+    const checkout=document.getElementById('fco').value;
+    const guests=document.getElementById('fg2').value;
+    const phone=document.getElementById('fp').value.trim();
+    const msg=document.getElementById('fm').value.trim();
+    const err=document.getElementById('ferr');
+    if(!first||!last||!email||!checkin||!checkout){err.textContent='Please fill in all required fields.';err.style.display='block';return}
+    let cap='';
+    try{cap=hcaptcha.getResponse()}catch(e){}
+    if(!cap){err.textContent='Please complete the CAPTCHA.';err.style.display='block';return}
+    err.style.display='none';
+    const btn=document.getElementById('fsub');
+    btn.textContent='Sending…';btn.disabled=true;
+    const nights=Math.round((new Date(checkout)-new Date(checkin))/86400000);
+    const total=nights*PRICE();
+    try{
+      await emailjs.send('service_2vzoblw','template_42yu96t',{
+        from_name:`${first} ${last}`,from_email:email,phone:phone||'N/A',
+        checkin,checkout,nights,guests,total:`€${total}`,
+        message:msg||'—',to_email:'jkholdings55@gmail.com'
+      });
+      document.getElementById('formwrap').style.display='none';
+      document.getElementById('fsucc').style.display='block';
+    }catch{
+      btn.textContent='Send Booking Request ✦';btn.disabled=false;
+      err.textContent='Something went wrong. Please WhatsApp or email us directly.';err.style.display='block';
+    }
+  }
+</script>
+</body>
+</html>
