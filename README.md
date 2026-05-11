@@ -1,146 +1,107 @@
-# eLiving Space — Complete Website
+# eLiving Space — Website Files
 
-Two files. Upload both to GitHub. Done.
+## Files to upload to GitHub
 
-## Files in this package
 | File | Purpose |
 |------|---------|
-| `index.html` | Main website — everything guests see |
-| `admin.html` | Your private dashboard — manage price & availability |
+| `index.html` | Main website |
+| `admin.html` | Admin dashboard |
+| `CNAME` | Tells GitHub Pages your custom domain |
+| `_config.yml` | GitHub Pages config |
+| `.nojekyll` | Prevents GitHub breaking your HTML |
+
+**All 5 files must be uploaded.** The CNAME, _config.yml, and .nojekyll are what unlock HTTPS.
 
 ---
 
-## 🚀 Deploy in 10 minutes (GitHub → Vercel → eliving.space)
+## 🔒 How to enable HTTPS on GitHub Pages — exact steps
 
-### Step 1 — Push to GitHub
-1. github.com → **New repository** → name it `eliving-space` → Public → Create
+### Step 1 — Upload all files to GitHub
+
+1. Go to github.com → your repo `Eliving.space`
 2. Click **Add file → Upload files**
-3. Upload `index.html` and `admin.html`
-4. Click **Commit changes**
+3. Upload ALL 5 files: `index.html`, `admin.html`, `CNAME`, `_config.yml`, `.nojekyll`
+4. Commit changes
 
-### Step 2 — Deploy on Vercel (free)
-1. vercel.com → Sign up with GitHub (free)
-2. **Add New Project** → select `eliving-space`
-3. Leave all settings default → **Deploy**
-4. ✅ Live at `eliving-space.vercel.app` in ~60 seconds
-
-### Step 3 — Connect eliving.space domain
-In **Vercel → your project → Settings → Domains**:
-- Add `eliving.space`
-- Vercel shows you DNS records to copy
-
-In **Hostinger DNS Zone** for eliving.space:
-- Add the A record or CNAME that Vercel provides
-- Wait 5–30 min for DNS to propagate
-
-✅ Your site is live at **eliving.space**
+> ⚠️ The `.nojekyll` file may be hidden on your computer (starts with a dot).
+> On Mac: press **Cmd+Shift+.** to show hidden files before uploading.
+> On Windows: it will show normally in File Explorer.
 
 ---
 
-## 🔐 Admin Dashboard
+### Step 2 — Enable GitHub Pages
 
-**URL:** `eliving.space/admin.html`
+1. In your repo → click **Settings** (top menu)
+2. In the left sidebar → click **Pages**
+3. Under **Source** → select **Deploy from a branch**
+4. Branch: **main** → Folder: **/ (root)** → click **Save**
+5. Wait 2–3 minutes → refresh the page
 
-**Default login:**
-- Username: `admin`
-- Password: `eliving2026!`
+---
 
-⚠️ **Change the password before going live!** Open `admin.html` and find:
+### Step 3 — Set your custom domain
+
+Still in **Settings → Pages**:
+
+1. Under **Custom domain** → type `eliving.space` → click **Save**
+2. GitHub will check DNS — it may say "DNS check in progress" — that's normal
+3. Once DNS passes, tick the box **Enforce HTTPS** → click it
+
+> If "Enforce HTTPS" is greyed out, your DNS isn't pointing correctly yet (see Step 4).
+
+---
+
+### Step 4 — Fix DNS in Hostinger (critical for HTTPS)
+
+Go to **Hostinger → Domains → eliving.space → DNS Zone**
+
+Delete any existing A records for `@`, then add these **4 GitHub IP A records**:
+
+| Type | Name | Value | TTL |
+|------|------|-------|-----|
+| A | @ | 185.199.108.153 | 3600 |
+| A | @ | 185.199.109.153 | 3600 |
+| A | @ | 185.199.110.153 | 3600 |
+| A | @ | 185.199.111.153 | 3600 |
+
+Also add this **CNAME for www**:
+
+| Type | Name | Value | TTL |
+|------|------|-------|-----|
+| CNAME | www | marketalgoai-create.github.io | 3600 |
+
+> Replace `marketalgoai-create` with your actual GitHub username if different.
+
+---
+
+### Step 5 — Wait and verify
+
+- DNS changes take **15 minutes to 24 hours** to propagate
+- Once done, go back to **GitHub → Settings → Pages**
+- You should see: ✅ "Your site is live at https://eliving.space"
+- The **Enforce HTTPS** checkbox should now be tickable — tick it
+
+---
+
+### Why HTTPS wasn't working before
+
+GitHub Pages HTTPS requires:
+1. ✅ A `CNAME` file in the repo root with your domain
+2. ✅ DNS A records pointing to GitHub's 4 IPs (not Hostinger's servers)
+3. ✅ "Enforce HTTPS" ticked in GitHub Pages settings
+4. ✅ `.nojekyll` file so GitHub doesn't process your HTML as Jekyll
+
+All of these are now included in your file package.
+
+---
+
+## Admin login
+
+URL: `https://eliving.space/admin.html`
+Username: `admin`
+Password: `eliving2026!`
+
+**Change the password** — open `admin.html` and edit:
 ```javascript
 const ADMIN_PASS = 'eliving2026!';
 ```
-Change it to something only you know.
-
-### What you can do in the admin:
-- **Change the nightly price** → updates on website instantly
-- **Block/unblock dates** on calendar → click any date
-- **Quick links** to Airbnb, Booking.com, WhatsApp
-
----
-
-## 📧 EmailJS — Booking Form
-
-Your credentials are already wired in:
-- Public key: `-SduMLzkgFgrXbrYP`
-- Service ID: `service_2vzoblw`
-- Template ID: `template_42yu96t`
-
-### Set up your email template on emailjs.com
-Your template (`template_42yu96t`) should use these variables:
-
-```
-Subject: New Booking Request — {{from_name}}
-
-Name:     {{from_name}}
-Email:    {{from_email}}
-Phone:    {{phone}}
-Check-in: {{checkin}}
-Check-out:{{checkout}}
-Nights:   {{nights}}
-Guests:   {{guests}}
-Total:    {{total}}
-Message:  {{message}}
-```
-
----
-
-## 🔒 hCaptcha (GDPR-compliant CAPTCHA)
-
-Currently using the **test sitekey** (`10000000-ffff-ffff-ffff-000000000001`) which always passes — fine for testing.
-
-**To activate real CAPTCHA:**
-1. Go to hcaptcha.com → Sign up (free)
-2. Add your site `eliving.space`
-3. Copy your **Site Key**
-4. In `index.html`, find and replace:
-   ```
-   data-sitekey="10000000-ffff-ffff-ffff-000000000001"
-   ```
-   with your real sitekey.
-
----
-
-## 📸 Photos
-
-All photos load from your GitHub repo:
-```
-https://raw.githubusercontent.com/marketalgoai-create/Eliving.space/main/[filename]
-```
-
-**Make sure your photos repo is Public** — otherwise images won't load on the live site.
-
-To check: go to github.com/marketalgoai-create/Eliving.space → Settings → make it Public.
-
----
-
-## 🍪 GDPR / Legal pages
-
-The site includes:
-- **Cookie consent banner** (Accept / Decline) on first visit
-- **Terms & Conditions** modal (footer link)
-- **Privacy Policy** modal (footer link)
-- **Cookie Policy** modal (footer link)
-
-All stored in `localStorage` — no database needed.
-
----
-
-## 💡 How price & availability work
-
-Both are stored in `localStorage` of your browser:
-- Price: `localStorage.setItem('eliving_price', '260')`
-- Blocked dates: `localStorage.setItem('eliving_blocked', '[...]')`
-
-**Important:** Always manage from the same browser/device. If you clear browser data or switch devices, settings reset. For multi-device management, contact us to upgrade to a Supabase backend.
-
----
-
-## ✅ Pre-launch checklist
-
-- [ ] Change admin password in `admin.html`
-- [ ] Set up EmailJS template at emailjs.com
-- [ ] Get real hCaptcha sitekey from hcaptcha.com
-- [ ] Make your GitHub photos repo Public
-- [ ] Point eliving.space DNS to Vercel
-- [ ] Test booking form end-to-end
-- [ ] Test on mobile

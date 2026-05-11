@@ -1,0 +1,18 @@
+# GitHub Pages configuration
+# This file tells GitHub Pages to serve your site correctly
+
+# Use the default GitHub Pages theme (we override everything with our own CSS)
+theme: null
+
+# Force HTTPS - required for custom domain HTTPS
+enforce_ssl: eliving.space
+
+# The custom domain
+url: "https://eliving.space"
+
+# Encoding
+encoding: utf-8
+
+# Exclude admin from being processed as Jekyll
+exclude:
+  - README.md
