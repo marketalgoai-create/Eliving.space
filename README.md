@@ -95,4 +95,13 @@ All of these are now included in your file package.
 
 ---
 
+## Admin login
 
+URL: `https://eliving.space/admin.html`
+Username: `admin`
+Password: `eliving2026!`
+
+**Change the password** — open `admin.html` and edit:
+```javascript
+const ADMIN_PASS = 'eliving2026!';
+```
